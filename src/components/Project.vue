@@ -12,26 +12,28 @@ defineProps({
 </script>
 
 <template>
-<section class="project padding-4x-tablet" :style="{ background: `linear-gradient(to bottom, rgba(0, 0, 0, 0.0) 0%, rgba(0, 0, 0, 0.7) 80%, rgba(0, 0, 0, 0.9) 100%), url('${imgUrl}') no-repeat center/cover` }">
+<section class="project padding-4x-tablet" :style="{ background: `linear-gradient(to bottom, rgba(0, 0, 0, 0.0) 0%, rgba(0, 0, 0, 0.4) 50%, rgba(0, 0, 0, 0.8) 80%, rgba(0, 0, 0, 0.9) 100%), url('${imgUrl}') no-repeat center/cover` }">
   <div class="project__metadata">
     <h2>{{ title }}</h2>
     <table>
-      <tr>
-        <td class="label">Company</td>
-        <td class="value">{{ company }}</td>
-      </tr>
-      <tr>
-        <td class="label">Year</td>
-        <td class="value">{{ year }}</td>
-      </tr>
-      <tr>
-        <td class="label">Role</td>
-        <td class="value">{{ role }}</td>
-      </tr>
-      <tr>
-        <td class="label">Platform</td>
-        <td class="value">{{ platform }}</td>
-      </tr>
+      <tbody>
+        <tr>
+          <td class="label">Company</td>
+          <td class="value">{{ company }}</td>
+        </tr>
+        <tr>
+          <td class="label">Year</td>
+          <td class="value">{{ year }}</td>
+        </tr>
+        <tr>
+          <td class="label">Role</td>
+          <td class="value">{{ role }}</td>
+        </tr>
+        <tr>
+          <td class="label">Platform</td>
+          <td class="value">{{ platform }}</td>
+        </tr>
+      </tbody>
     </table>
   </div>
 </section>
@@ -50,11 +52,6 @@ defineProps({
 
   @media (max-width: 576px) {
     height: 300px;
-  }
-
-  &:hover {
-    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.0) 20%, rgba(0, 0, 0, 0.7) 80%, rgba(0, 0, 0, 0.9) 100%);
-    cursor: pointer;
   }
 }
 
@@ -75,5 +72,6 @@ td {
 
 .label {
   color: var(--color-text-inverse-dim);
+  padding-right: var(--spacing-3x);
 }
 </style>
