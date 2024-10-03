@@ -1,0 +1,240 @@
+.toast-title {
+    font-weight: bold;
+    margin-bottom: 0.25em;
+    margin-right: 1em;
+    font-size: $text-s;
+}
+
+.toast-message {
+    word-wrap: break-word;
+    //font-weight: 600;
+    margin-right: 1em;
+    line-height: normal;
+    font-size: $text-s;
+}
+
+.toast-message a,
+.toast-message label {
+    color: #ffffff;
+}
+
+.toast-message a:hover {
+    color: #cccccc;
+    text-decoration: none;
+}
+
+.toast-close-button {
+    position: relative;
+    right: -0.5em;
+    top: -0.5em;
+    float: right;
+    font-size: 1.5em;
+    color: #ffffff;
+    opacity: 0.8;
+}
+
+.toast-close-button:hover,
+.toast-close-button:focus {
+    color: #000000;
+    text-decoration: none;
+    cursor: pointer;
+    opacity: 0.4;
+}
+/*Additional properties for button version
+ iOS requires the button element instead of an anchor tag.
+ If you want the anchor version, it requires `href="#"`.*/
+button.toast-close-button {
+    padding: 0;
+    cursor: pointer;
+    background: transparent;
+    border: 0;
+    -webkit-appearance: none;
+}
+
+.toast-top-center {
+    top: 0;
+    right: 0;
+    width: 100%;
+}
+
+.toast-bottom-center {
+    bottom: 0;
+    right: 0;
+    width: 100%;
+}
+
+.toast-top-full-width {
+    top: 0;
+    right: 0;
+    width: 100%;
+}
+
+.toast-bottom-full-width {
+    bottom: 0;
+    right: 0;
+    width: 100%;
+}
+
+.toast-top-left {
+    top: 1em;
+    left: 1em;
+}
+
+.toast-top-right {
+    top: 1em;
+    right: 1em;
+}
+
+.toast-bottom-right {
+    right: 1em;
+    bottom: 1em;
+}
+
+.toast-bottom-left {
+    bottom: 1em;
+    left: 1em;
+}
+
+#toast-container {
+    position: fixed;
+    z-index: 999999;
+    /*overrides*/
+}
+
+#toast-container * {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+#toast-container .toast {
+    position: relative;
+    overflow: hidden;
+    margin: 1em;
+    padding: 1em 1em 1em 3em;
+    width: 300px;
+    -moz-border-radius: 0.25em;
+    -webkit-border-radius: 0.25em;
+    border-radius: 0.25em;
+    background-position: 1em 1.2em;
+    background-repeat: no-repeat;
+    color: #ffffff;
+    opacity: 0.9;
+}
+
+#toast-container .toast:hover {
+    opacity: 1;
+    cursor: pointer;
+}
+
+#toast-container .toast.toast-info {
+    background-image: url("data:image/svg+xml,%3Csvg width='16' height='16' viewBox='0 0 16 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M8.9707 4.05029C9.19271 4.05029 9.3798 4.12728 9.53198 4.28125C9.68416 4.43522 9.76025 4.62142 9.76025 4.83984C9.76025 5.05827 9.68327 5.24447 9.5293 5.39844C9.37532 5.55241 9.18913 5.62939 8.9707 5.62939C8.75586 5.62939 8.57145 5.55241 8.41748 5.39844C8.26351 5.24447 8.18652 5.05827 8.18652 4.83984C8.18652 4.62142 8.26261 4.43522 8.41479 4.28125C8.56698 4.12728 8.75228 4.05029 8.9707 4.05029Z' fill='white'/%3E%3Cpath d='M9.30371 6.521L8.20264 10.3398C8.14176 10.5583 8.11133 10.7015 8.11133 10.7695C8.11133 10.8089 8.12744 10.8456 8.15967 10.8796C8.19189 10.9137 8.22591 10.9307 8.26172 10.9307C8.32259 10.9307 8.38346 10.9038 8.44434 10.8501C8.60547 10.7176 8.79883 10.4777 9.02441 10.1304L9.20703 10.2378C8.66634 11.1795 8.09164 11.6504 7.48291 11.6504C7.25016 11.6504 7.06486 11.585 6.927 11.4543C6.78914 11.3236 6.72021 11.158 6.72021 10.9575C6.72021 10.825 6.75065 10.6567 6.81152 10.4526L7.55811 7.88525C7.62972 7.63818 7.66553 7.45199 7.66553 7.32666C7.66553 7.24788 7.63151 7.17806 7.56348 7.11719C7.49544 7.05631 7.40234 7.02588 7.28418 7.02588C7.23047 7.02588 7.16602 7.02767 7.09082 7.03125L7.16064 6.81641L8.98145 6.521H9.30371Z' fill='white'/%3E%3Ccircle cx='8' cy='8' r='7.5' stroke='white'/%3E%3C/svg%3E%0A");
+}
+
+#toast-container .toast.toast-error {
+    background-image: url("data:image/svg+xml,%3Csvg width='16' height='16' viewBox='0 0 16 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M15.0621 12.9759L8.85166 2.88394C8.46117 2.24941 7.53883 2.24941 7.14834 2.88394L0.937906 12.9759C0.527894 13.6422 1.00724 14.5 1.78956 14.5H14.2104C14.9928 14.5 15.4721 13.6422 15.0621 12.9759Z' stroke='white' stroke-linejoin='round'/%3E%3Cpath d='M8 6.5V9.5' stroke='white' stroke-linecap='round'/%3E%3Ccircle cx='8' cy='11.5' r='0.5' fill='white'/%3E%3C/svg%3E%0A");
+}
+
+#toast-container .toast.toast-success {
+    background-image: url("data:image/svg+xml,%3Csvg width='16' height='16' viewBox='0 0 16 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='8' cy='8' r='7.5' stroke='white'/%3E%3Cpath d='M3.5 8L6.5 11L12.5 5' stroke='white' stroke-linecap='round'/%3E%3C/svg%3E%0A");
+}
+
+#toast-container .toast.toast-warning {
+    background-image: url("data:image/svg+xml,%3Csvg width='16' height='16' viewBox='0 0 16 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M15.0621 12.9759L8.85166 2.88394C8.46117 2.24941 7.53883 2.24941 7.14834 2.88394L0.937906 12.9759C0.527894 13.6422 1.00724 14.5 1.78956 14.5H14.2104C14.9928 14.5 15.4721 13.6422 15.0621 12.9759Z' stroke='white' stroke-linejoin='round'/%3E%3Cpath d='M8 6.5V9.5' stroke='white' stroke-linecap='round'/%3E%3Ccircle cx='8' cy='11.5' r='0.5' fill='white'/%3E%3C/svg%3E%0A");
+}
+
+#toast-container.toast-top-center .toast,
+#toast-container.toast-bottom-center .toast {
+    width: 300px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#toast-container.toast-top-full-width .toast,
+#toast-container.toast-bottom-full-width .toast {
+    width: 96%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.toast {
+    background-color: #030303;
+}
+
+.toast-success {
+    background-color: $green;
+}
+
+.toast-error {
+    background-color: $red;
+}
+
+.toast-info {
+    background-color: $blue;
+}
+
+.toast-warning {
+    background-color: $orange;
+}
+
+progress-bar {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 0.25em;
+    background-color: #000000;
+    opacity: 0.4;
+}
+/*Animations*/
+div[toast] {
+    opacity: 1 !important;
+}
+
+div[toast].ng-enter {
+    opacity: 0 !important;
+    transition: opacity 0.3s linear;
+}
+
+div[toast].ng-enter.ng-enter-active {
+    opacity: 1 !important;
+}
+
+div[toast].ng-leave {
+    opacity: 1;
+    transition: opacity 0.3s linear;
+}
+
+div[toast].ng-leave.ng-leave-active {
+    opacity: 0 !important;
+}
+/*Responsive Design*/
+@media all and (max-width: 240px) {
+    #toast-container .toast.div {
+        padding: 1em 1em 1em 3em;
+        width: 11em;
+    }
+
+    #toast-container .toast-close-button {
+        right: -0.2em;
+        top: -0.2em;
+    }
+}
+
+@media all and (min-width: 241px) and (max-width: 480px) {
+    #toast-container .toast.div {
+        padding: 1em 1em 1em 3em;
+        width: 18em;
+    }
+
+    #toast-container .toast-close-button {
+        right: -0.2em;
+        top: -0.2em;
+    }
+}
+
+@media all and (min-width: 481px) and (max-width: 768px) {
+    #toast-container .toast.div {
+        padding: 1em 1em 1em 3em;
+        width: 25em;
+    }
+}

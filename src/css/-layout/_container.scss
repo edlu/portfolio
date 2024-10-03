@@ -1,0 +1,25 @@
+@import '../-abstracts/_mixins.scss';
+
+:root {
+    --padding-container: var(--spacing-4x);
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 1fr minmax(1em, 1194px) 1fr;
+    grid-template-areas: 'gutter-left container-content gutter-right';
+
+    &--full-width {
+        @extend .container;
+        grid-template-columns: 100%;
+        grid-template-areas: 'container-content';
+    }
+
+    &__content {
+        grid-area: container-content;
+
+        @include for-size(mobile) {
+            padding: var(--spacing-1x);
+        }
+    }
+}

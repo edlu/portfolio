@@ -1,0 +1,14 @@
+/*
+This file is used to contain all core style imports and is compiled into the final CSS 
+*/
+
+@charset 'utf-8';
+
+// CORE
+@use '-abstracts/__abstracts-all.scss';
+@use '-base/__base-all.scss';
+@use '-components/__components-all.scss';
+@use '-layout/__layout-all.scss';
+
+// THEME
+@use '-themes/_default-theme.scss';

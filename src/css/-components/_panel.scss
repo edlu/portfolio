@@ -1,0 +1,36 @@
+:root {
+    // Light Theme
+    --color-panel-bg: var(--color-white-100);
+    --color-panel-border: var(--color-black-10);
+    // Dark Theme
+    --color-panel-bg-dark: var(--color-gray-20);
+    --color-panel-border-dark: var(--color-gray-30);
+}
+
+.panel {
+    background-color: var(--color-panel-bg);
+    &--top {
+        @extend .panel;
+        border-bottom: 1px solid var(--color-panel-border);
+    }
+
+    &--bottom {
+        @extend .panel;
+        border-top: 1px solid var(--color-panel-border);
+    }
+
+    &--left {
+        @extend .panel;
+        border-right: 1px solid var(--color-panel-border);
+    }
+
+    &--right {
+        @extend .panel;
+        border-left: 1px solid var(--color-panel-border);
+    }
+}
+
+body.theme--dark {
+    --color-panel-bg: var(--color-panel-bg-dark);
+    --color-panel-border: var(--color-panel-border-dark);
+}

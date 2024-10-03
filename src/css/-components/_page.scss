@@ -1,0 +1,165 @@
+:root {
+    --base-type-size: 1rem; // 16px = 1rem. This defines the base size for EVERYTHING
+    --font-family-main: var(--font-family-sans-serif);
+
+    /* BACKGROUND AND BORDER COLOR */
+    // Light theme
+    --color-page-background: var(--color-gray-96);
+    --color-separator: var(--color-black-05);
+
+    // Dark theme
+    --color-page-background-dark: var(--color-gray-05);
+    --color-separator-dark: var(--color-white-05);
+
+    /* TEXT COLOR */
+    // Light theme
+    --color-text: var(--color-black-60);
+    --color-text-hover: var(--color-black-80);
+    --color-text-dim: var(--color-black-50);
+    --color-text-hint: var(--color-black-30);
+
+    --color-heading: var(--color-black-70);
+    --color-text-bg: var(--color-black-03);
+
+    --color-text-info: var(--color-info);
+    --color-text-warning: var(--color-warning);
+    --color-text-danger: var(--color-danger);
+
+    --color-link: var(--color-brand-primary);
+    --color-link-hover: var(--color-brand-primary-darken);
+    --color-link-local: var(--color-black-40);
+    --color-link-local-hover: var(--color-black-20);
+
+    // Dark theme
+    --color-text-dark: var(--color-white-80);
+    --color-text-hover-dark: var(--color-white-90);
+    --color-text-dim-dark: var(--color-white-60);
+    --color-text-hint-dark: var(--color-white-40);
+
+    --color-heading-dark: var(--color-white-100);
+    --color-text-bg-dark: var(--color-white-05);
+
+    --color-link-dark: var(--color-brand-primary);
+    --color-link-hover-dark: var(--color-brand-primary-darken);
+    --color-link-local-dark: var(--color-white-70);
+    --color-link-local-hover-dark: var(--color-white-90);
+
+    // Inverse (colors used on theme-independent darker solid color blocks)
+    --color-text-inverse: var(--color-white-100);
+    --color-text-inverse-dim: var(--color-white-80);
+
+    /* BRAND + SEMANTIC UI COLORS */
+    // Light Theme
+    --color-brand-primary: hsl(197 100% 50%);
+    // manually define darker/lighter variants until new CSS color module 5 features work in all browsers
+    --color-brand-primary-darken: hsl(197 100% 40%);
+    --color-brand-primary-lighten: hsl(197 100% 70%);
+
+    --color-brand-secondary: hsl(151 90% 70%);
+    --color-brand-secondary-darken: hsl(151 90% 60%);
+    --color-brand-secondary-lighten: hsl(151 90% 90%);
+
+    --color-info: hsl(197 100% 50%);
+    --color-info-darken: hsl(197 100% 40%);
+    --color-info-lighten: hsl(197 100% 70%);
+
+    --color-danger: hsl(1 94% 53%);
+    --color-danger-darken: hsl(1 84% 43%);
+    --color-danger-lighten: hsl(1 84% 73%);
+
+    --color-warning: hsl(30 95% 56%);
+    --color-warning-darken: hsl(30 89% 46%);
+    --color-warning-lighten: hsl(30 89% 76%);
+
+    --color-success: hsl(98 88% 41%);
+    --color-success-darken: hsl(98 88% 31%);
+    --color-success-lighten: hsl(98 88% 61%);
+
+    // Dark Theme
+    --color-info-dark: hsl(197 100% 50%);
+    --color-danger-dark: rgb(238, 31, 27);
+    --color-warning-dark: rgb(255, 153, 0);
+    --color-success-dark: hsl(98 88% 50%);
+
+    /* SEAT AVAILABILITY COLORS */
+
+    .color-availability-high {
+        color: var(--color-success);
+    }
+
+    .color-availability-medium {
+        color: var(--color-warning);
+    }
+
+    .color-availability-low {
+        color: var(--color-danger);
+    }
+
+    /* GRADIENTS */
+    --color-gradient-brand: 90deg, var(--color-brand-primary) 0%,
+        var(--color-brand-secondary) 100%;
+}
+
+@mixin dark-theme {
+    color-scheme: light dark; // activates user agent's dark theme
+    --color-text: var(--color-text-dark);
+    --color-text-dim: var(--color-text-dim-dark);
+    --color-text-hint: var(--color-text-hint-dark);
+
+    --color-text-bg: var(--color-text-bg-dark);
+    --color-heading: var(--color-heading-dark);
+
+    --color-link: var(--color-link-dark);
+    --color-link-hover: var(--color-link-hover-dark);
+    --color-link-local: var(--color-link-local-dark);
+    --color-link-local-hover: var(--color-link-local-hover-dark);
+
+    --color-info: var(--color-info-dark);
+    --color-danger: var(--color-danger-dark);
+    --color-warning: var(--color-warning-dark);
+    --color-success: var(--color-success-dark);
+
+    --color-page-bg: var(--color-page-bg-dark);
+    --color-panel-bg: var(--color-panel-bg-dark);
+    --color-panel-border: var(--color-panel-border-dark);
+    --color-separator: var(--color-separator-dark);
+}
+
+/* GLOBAL FONT DEFINITIONS */
+html {
+    font-size: var(--base-type-size);
+    font-weight: 400;
+    font-style: normal;
+    scroll-behavior: smooth;
+}
+
+body {
+    color: var(--color-text);
+    background-color: var(--color-page-bg);
+    font-family: sans-serif; /* Fallback for older browsers */
+    font-family: var(--font-family-main);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        color: var(--color-heading);
+        font-family: sans-serif; /* Fallback for old browsers */
+        font-family: var(--font-family-display);
+    }
+
+    &.theme--dark {
+        @include dark-theme;
+    }
+
+    /* Should we respect build device theme preference as an nliven option? */
+    /* Here's how we'd do it */
+
+    // @media (prefers-color-scheme: dark) {
+    //     @include dark-theme;
+    // }
+}

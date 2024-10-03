@@ -1,0 +1,74 @@
+@import '../-abstracts/_mixins.scss';
+
+:root {
+    --color-page-header-bg: var(--color-black-100);
+    --color-page-header-border: var(--color-white-10);
+}
+
+.header {
+    display: grid;
+    grid-template-columns: 1fr minmax(1em, 1194px) 1fr;
+    grid-template-areas: 'gutter-left header-content gutter-right';
+    background-color: var(--color-page-header-bg);
+    border-bottom: var(--color-page-header-border);
+    z-index: var(--z-index-page);
+
+    &--full-width {
+        @extend .header;
+        grid-template-columns: 100%;
+        grid-template-areas: 'header-content';
+    }
+
+    &__content {
+        display: flex;
+        min-height: 3em;
+        grid-area: header-content;
+        justify-content: space-between;
+        align-items: center;
+        padding: var(--spacing-1x) var(--spacing-2x);
+        gap: var(--spacing-1x);
+        transition: all 0.2s ease-in-out;
+
+        @include for-size(mobile) {
+            padding: var(--spacing-half) var(--spacing-1x);
+            font-size: var(--size-s);
+        }
+    }
+
+    &__nav-image {
+        height: var(--spacing-3x);
+        max-width: 16.5em;
+
+        img {
+            @extend .header__nav-image;
+        }
+    }
+
+    &__actions {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        height: 3em;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    &__button--account {
+        overflow: hidden;
+
+        .button__label {
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+
+            @include for-size(mobile) {
+                display: none;
+            }
+        }
+    }
+
+    &__menu--account {
+        display: none;
+        position: absolute;
+    }
+}

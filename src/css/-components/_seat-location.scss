@@ -1,0 +1,28 @@
+.seat-location {
+    display: flex;
+
+    &__info {
+        padding: 0.5em;
+        color: $black-50;
+        font-size: $text-xl;
+        font-weight: bold;
+        border-radius: 0.25em;
+        overflow: hidden;
+
+        &:not(:last-child) {
+            margin-right: 0.125em;
+        }
+
+        &--section {
+            background-color: #ededed;
+        }
+
+        &--row {
+            background-color: #e8e8e8;
+        }
+
+        &--seat {
+            background-color: #dedede;
+        }
+    }
+}

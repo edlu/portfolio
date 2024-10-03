@@ -1,0 +1,120 @@
+@import '_mixins.scss';
+
+//   *********************
+//   INITIAL VARIABLES
+//   These should generally not be overridden!
+//
+//   Sizes
+//   Spacing
+//   Border Radii
+//   Shadows
+//   Z-Index
+//   Transitions
+//
+//   *********************
+
+/* SIZE SASS LIST */
+$sizes: (
+    9xl,
+    8xl,
+    7xl,
+    6xl,
+    5xl,
+    4xl,
+    3xl,
+    2xl,
+    xl,
+    l,
+    m,
+    s,
+    xs,
+    2xs,
+    3xs,
+    inherit,
+    reset
+);
+
+/* SPACING SASS MAP */
+$spacings: (
+    'none': 0,
+    'eighth': 0.125em,
+    'quarter': 0.25em,
+    'half': 0.5em,
+    'three-quarters': 0.75em,
+    '1x': 1em,
+    '2x': 2em,
+    '3x': 3em,
+    '4x': 4em,
+    '5x': 5em,
+    '6x': 6em,
+    '7x': 7em,
+    '8x': 8em
+);
+
+:root {
+    /* SIZES */
+    // @include map-to-props(
+    //     size,
+    //     $sizes
+    // ); // converts $sizes map to CSS variables. Add or edit sizes in the map!
+    // Major Second Size Scale
+    --size-9xl: 3.247em;
+    --size-8xl: 2.887em;
+    --size-7xl: 2.566em;
+    --size-6xl: 2.281em;
+    --size-5xl: 2.027em;
+    --size-4xl: 1.802em;
+    --size-3xl: 1.602em;
+    --size-2xl: 1.424em;
+    --size-xl: 1.266em;
+    --size-l: 1.125em;
+    --size-m: 1em;
+    --size-s: 0.889em;
+    --size-xs: 0.79em;
+    --size-2xs: 0.702em;
+    --size-3xs: 0.624em;
+
+    /* SPACINGS */
+    @include map-to-props(
+        spacing,
+        $spacings
+    ); // converts $spacings map to CSS variables. Add or edit sizes in the map!
+
+    /* BREAKPOINTS */
+    // Breakpoints are defined in the 'for-size' mixin
+
+    /* BORDER RADII */
+    --radius-tiny: var(--spacing-quarter);
+    --radius-small: var(--spacing-half);
+    --radius-medium: var(--spacing-three-quarters);
+    --radius-large: var(--spacing-1x);
+
+    /* SHADOWS */
+    --color-shadow: 0deg 0% 0%;
+    --shadow-elevation-low: 0px 0.5px 0.4px hsl(var(--color-shadow) / 0.14),
+        0.1px 0.7px 0.6px -2px hsl(var(--color-shadow) / 0.11),
+        0.2px 1.9px 1.7px -4.1px hsl(var(--color-shadow) / 0.07);
+    --shadow-elevation-medium: 0px 0.5px 0.4px hsl(var(--color-shadow) / 0.15),
+        0.1px 1.1px 1px -1.4px hsl(var(--color-shadow) / 0.12),
+        0.3px 3.4px 3px -2.7px hsl(var(--color-shadow) / 0.09),
+        0.8px 9.4px 8.3px -4.1px hsl(var(--color-shadow) / 0.06);
+    --shadow-elevation-high: 0px 0.5px 0.4px hsl(var(--color-shadow) / 0.14),
+        0.1px 1.3px 1.2px -0.6px hsl(var(--color-shadow) / 0.13),
+        0.2px 2.7px 2.4px -1.2px hsl(var(--color-shadow) / 0.11),
+        0.4px 5.3px 4.7px -1.8px hsl(var(--color-shadow) / 0.1),
+        0.8px 9.9px 8.8px -2.3px hsl(var(--color-shadow) / 0.09),
+        1.4px 17.2px 15.3px -2.9px hsl(var(--color-shadow) / 0.07),
+        2.3px 28.1px 25px -3.5px hsl(var(--color-shadow) / 0.06),
+        3.5px 43.1px 38.3px -4.1px hsl(var(--color-shadow) / 0.04);
+
+    /* Z-INDEXES */
+    // content-level should default to z-index: 0
+    --z-index-page: 100; // Top of page
+    --z-index-global: 200; // Top of page + navigation
+    --z-index-max: 300; // Top of the world
+
+    /* TRANSITION TIMING */
+    --transition-fast: 0.1s ease-in-out;
+    --transition-medium: 0.25s ease-in-out;
+    --transition-slow: 0.5s ease-in-out;
+}

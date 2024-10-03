@@ -1,0 +1,454 @@
+@use '../-abstracts/variables';
+@use '../-themes/default-theme';
+
+/*********** FORM ELEMENTS ************/
+/** 1. BASIC INPUTS                  **/
+/** 2. TEXT AREAS                    **/
+/** 3. SELECTS                       **/
+/** 4. RADIO BUTTONS                 **/
+/** 5. CHECKBOXES                    **/
+/** 6. SWITCHES                      **/
+/** 7. RANGE SLIDERS                 **/
+/** 8. INPUTS WITH ICONS             **/
+/** 9. STRIPE ELEMENTS               **/
+/**************************************/
+
+// 1. BASIC INPUTS
+
+.input-field {
+    background-color: var(--color-input-background);
+    border: 1px solid var(--color-input-border);
+    transition: border 0.2s ease-out;
+    border-radius: var(--radius-input);
+
+    &:not([type='radio']):not([type='checkbox']):not([type='color']):not([multiple]) {
+        padding: calc(var(--spacing-1x) / 1.5) var(--spacing-1x);
+        min-height: 3em;
+        line-height: 1.3em;
+    }
+
+    &::placeholder {
+        color: var(--color-text-dim);
+        font-style: italic;
+    }
+
+    &:hover {
+        border: 1px solid
+            scale-color(var(--color-input-border), $lightness: -30%);
+    }
+
+    &:focus {
+        border: 1px solid var(--color-brand-primary);
+        outline: none;
+
+        &::placeholder {
+            color: var(--color-text-dim);
+        }
+    }
+
+    &:disabled {
+        background-color: var(--color-input-background-disabled);
+        color: var(--color-text-dim);
+
+        &:hover {
+            cursor: not-allowed;
+        }
+    }
+
+    &[type='time'],
+    &[type='week'],
+    &[type='month'],
+    &[type='date'],
+    &[type='datetime-local'] {
+        color: var(--color-text-dim);
+        font-style: italic;
+
+        &::-webkit-calendar-picker-indicator {
+            color: var(--color-text-dim);
+            opacity: 0.5;
+        }
+    }
+
+    &[type='color'] {
+        width: 3.5em;
+        height: 3.5em;
+        padding: var(--spacing-quarter);
+    }
+
+    &[type='file'] {
+        color: var(--color-text-dim);
+        font-style: italic;
+
+        &::-webkit-file-upload-button {
+            // extend standard pill button?
+            @extend .button;
+            // border-radius: 2em;
+            // background-color: var(--color-white-100);
+            // border: 1px solid $black-20;
+            // color: $black-70;
+            // font-family: inherit;
+            // font-size: inherit;
+            // outline: none;
+        }
+    }
+}
+
+// 2. TEXT AREAS
+
+.input-text-area {
+    @extend .input-field;
+    height: var(--spacing-4x);
+}
+
+// 3. SELECTS
+
+.select {
+    @extend .input-field;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    appearance: none;
+
+    &:hover {
+        cursor: pointer;
+    }
+
+    &:not([multiple]) {
+        background-image: caretDownIcon(#000000);
+        background-repeat: no-repeat;
+        background-position: right var(--spacing-1x) center;
+        background-size: var(--spacing-three-quarters);
+        padding-right: var(--spacing-2x);
+    }
+
+    &[multiple] {
+        padding: 0;
+    }
+
+    optgroup {
+        font-style: normal;
+    }
+
+    option {
+        padding: calc(var(--spacing-1x) / 1.5) var(--spacing-1x);
+
+        &:disabled {
+            color: var(--color-text-hint);
+        }
+    }
+}
+
+// 4. RADIO BUTTONS
+.radio {
+    @extend .input-field;
+    border-radius: 50%;
+    width: 1.5em;
+    height: 1.5em;
+    padding: 0;
+    margin: 0;
+    -webkit-appearance: none;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: var(--transition-medium);
+
+    &:before {
+        content: '';
+        width: var(--spacing-three-quarters);
+        height: var(--spacing-three-quarters);
+        border-radius: 50%;
+        display: block;
+        position: relative;
+        background-color: var(--color-brand-primary);
+        transition: var(--transition-fast);
+        transform: scale(0);
+    }
+
+    &:disabled ~ span {
+        opacity: 0.5;
+
+        &:hover {
+            cursor: not-allowed;
+        }
+    }
+
+    &:hover:not(:disabled) {
+        background-color: var(--color-input-background-disabled);
+    }
+
+    &:checked {
+        &:before {
+            transform: scale(1);
+        }
+    }
+}
+
+input[type='radio'] {
+    @extend .radio;
+}
+
+.radio-wrapper {
+    display: grid;
+    grid-template-columns: min-content auto;
+    gap: var(--spacing-half);
+    margin-bottom: var(--spacing-three-quarters);
+    color: var(--color-brand-primary);
+    font-weight: normal;
+    color: var(--color-text);
+    line-height: normal;
+
+    &:hover {
+        cursor: pointer;
+    }
+
+    &:hover > input:not(:disabled) {
+        cursor: pointer;
+
+        input {
+            border: 1px solid
+                scale-color(var(--color-input-border), $lightness: -30%);
+        }
+    }
+}
+
+// 5. CHECKBOXES
+.checkbox {
+    @extend .input-field;
+    border-radius: var(--radius-input);
+    width: 1.5em;
+    height: 1.5em;
+    padding: 0;
+    margin: 0;
+    -webkit-appearance: none;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: var(-transition-medium);
+
+    &:before {
+        content: '';
+        position: relative;
+        display: block;
+        background-image: checkIcon($blue);
+        background-position: center center;
+        background-size: 50%;
+        background-repeat: no-repeat;
+        width: 1.5em;
+        height: 1.5em;
+        transition: all 0.1s ease-out;
+        transform: scale(0);
+    }
+
+    &:checked {
+        &:before {
+            transform: scale(1);
+        }
+    }
+
+    &:indeterminate {
+        &:before {
+            content: '';
+            position: relative;
+            display: block;
+            background-image: dashIcon($blue);
+            background-position: center center;
+            background-size: 0.75em;
+            background-repeat: no-repeat;
+            width: 1.5em;
+            height: 1.5em;
+            transform: scale(1);
+        }
+    }
+
+    &:disabled ~ * {
+        background-color: var(--color-input-background-disabled);
+
+        &:hover {
+            cursor: not-allowed;
+        }
+    }
+}
+
+.checkbox-wrapper {
+    display: inline-grid;
+    grid-template-columns: min-content auto;
+    gap: var(--spacing-half);
+    font-weight: normal;
+    color: var(--color-text);
+    line-height: normal;
+    text-align: left;
+
+    &:hover {
+        cursor: pointer;
+    }
+
+    &:hover > input:not(:disabled) {
+        color: scale-color(var(--color-text), $lightness: -20%);
+        cursor: pointer;
+
+        input {
+            border: 1px solid
+                scale-color(var(--color-input-border), $lightness: -20%);
+        }
+    }
+
+    &:focus-within,
+    &:checked {
+        color: scale-color(var(--color-input-border), $lightness: -20%);
+    }
+}
+
+// 6. SWITCHES
+.switch {
+    position: relative;
+    width: 2.5em;
+    height: 1.5em;
+    margin: 0.4em 0 0.25em 0;
+    -webkit-appearance: none;
+    background-color: var(--color-input-background);
+    border-radius: 0.75em;
+    -webkit-transition: all 0.2s ease-out;
+    transition: all 0.2s ease-out;
+    padding: 0.375em;
+    opacity: 0.8;
+
+    &:hover,
+    &:focus {
+        background-color: var(--color-text-dim);
+        cursor: pointer;
+        outline: none;
+        opacity: 1;
+    }
+
+    &::before {
+        position: absolute;
+        content: '';
+        height: 0.75em;
+        width: 0.75em;
+        border-radius: 0.375em;
+        background-color: var(--color-white-100);
+        -webkit-transition: 0.1s ease-out;
+        transition: 0.1s ease-out;
+    }
+
+    &:active::before {
+        width: 1.25em;
+    }
+
+    &:checked {
+        background-color: var(--color-brand-primary);
+        border: none;
+
+        &::before {
+            transform: translateX(1em);
+            background-color: var(--color-white-100);
+        }
+
+        &:active::before {
+            width: 1.25em;
+            transform: translateX(0.5em);
+        }
+    }
+
+    &:disabled {
+        background-color: var(--color-black-10);
+        opacity: 1;
+
+        &:hover {
+            background-color: var(--color-black-10);
+            cursor: not-allowed;
+        }
+    }
+}
+
+// 7. RANGE SLIDERS
+.slider {
+    -webkit-appearance: none;
+    height: 0.25em;
+    border-radius: 0.25em;
+    background: var(--color-black-10);
+    outline: none;
+    border: none;
+    -webkit-transition: 0.2s;
+    transition: background 0.2s;
+    padding: 0;
+    margin: 1.2em 0;
+
+    &:hover,
+    &:focus {
+        background: var(--color-black-20);
+    }
+
+    &::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        appearance: none;
+        width: 1.5em;
+        height: 1.5em;
+        border-radius: 0.75em;
+        background: white;
+        border: 1px solid var(--color-input-border);
+        cursor: pointer;
+
+        &:hover {
+            border: 1px solid
+                scale-color(var(--color-input-border), $lightness: -30%);
+        }
+    }
+
+    &::-moz-range-thumb {
+        width: 1.5em;
+        height: 1.5em;
+        border-radius: 0.75em;
+        background: white;
+        border: 1px solid var(--color-input-border);
+        cursor: pointer;
+
+        &:hover {
+            border: 1px solid
+                scale-color(var(--color-input-border), $lightness: -30%);
+        }
+    }
+
+    &__value {
+        font-size: var(--size-s);
+        padding: 0.25em;
+        background-color: var(--color-black-05);
+        border-radius: 0.5em;
+        margin-left: 1em;
+    }
+}
+
+// 8. INPUTS WITH ICONS
+.input-icon-right {
+    position: relative;
+
+    &__icon {
+        position: absolute;
+        width: 3em;
+        height: 100%;
+        opacity: 0.3;
+        top: 0;
+        right: 0;
+        background-position: right 1em center;
+        background-repeat: no-repeat;
+        background-size: 1em 1em;
+        transition: all 0.1s ease-out;
+    }
+}
+
+// 9. STRIPE ELEMENTS
+
+.StripeElement {
+    @extend .input-field;
+
+    &.StripeElement--invalid,
+    &.has-error {
+        border: 1px solid var(--color-danger);
+        box-shadow: none;
+    }
+}
+
+.StripeElement ~ .validation-response {
+    display: block;
+}

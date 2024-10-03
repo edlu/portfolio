@@ -1,0 +1,36 @@
+.layout-single-column {
+    display: grid;
+    height: 100%;
+    grid-template-rows: 3em 1fr;
+    grid-template-areas:
+        'header-area'
+        'main-area';
+    background-color: var(--color-page-background);
+
+    header {
+        height: 3rem;
+        grid-area: header-area;
+    }
+
+    main {
+        grid-area: main-area;
+        overflow-y: auto;
+    }
+}
+
+.content {
+    width: 100%;
+    height: 100%;
+    padding: var(--spacing-2x);
+    transition: all 0.2s ease-in-out;
+
+    &--max-width {
+        max-width: 1194px;
+    }
+}
+
+@media screen and (max-width: var(--breakpoint-mobile)) {
+    .content {
+        padding: 0;
+    }
+}

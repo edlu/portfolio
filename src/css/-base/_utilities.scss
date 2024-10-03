@@ -1,0 +1,802 @@
+@import '../-abstracts/_variables.scss';
+@import '../-abstracts/_mixins.scss';
+
+//  UTILITY CLASSES
+//
+//  Margins
+//  Padding
+//  Position
+//  Text Alignment
+//  Sizing
+//  Gap
+//  Width and Height
+//  Type Weight
+//  Display
+//  Flex
+//  Overflow
+//  Z-Index
+//  Text Color
+//  Background Color
+//  Border Radii
+//
+
+/* MARGINS + PADDING */
+/*#region*/
+$spacing-properties: ('margin', 'padding') !default;
+$spacing-directions: ('top', 'right', 'bottom', 'left') !default;
+$spacing-horizontal: 'x' !default;
+$spacing-vertical: 'y' !default;
+$spacing-breakpoints: (
+    'mobile',
+    'tablet-portrait',
+    'tablet',
+    'desktop',
+    'desktop-large'
+);
+
+@each $property in $spacing-properties {
+    @each $name, $value in $spacings {
+        // All directions
+        .#{$property}-#{$name} {
+            #{$property}: $value !important;
+
+            // Each breakpoint
+            @each $breakpoint in $spacing-breakpoints {
+                &-#{$breakpoint} {
+                    @include for-size(#{$breakpoint}) {
+                        #{$property}: $value !important;
+                    }
+                }
+            }
+        }
+
+        // Cardinal directions
+        @each $direction in $spacing-directions {
+            .#{$property}-#{$direction}-#{$name} {
+                #{$property}-#{$direction}: $value !important;
+
+                // Each breakpoint
+                @each $breakpoint in $spacing-breakpoints {
+                    &-#{$breakpoint} {
+                        @include for-size(#{$breakpoint}) {
+                            #{$property}: $value !important;
+                        }
+                    }
+                }
+            }
+        }
+
+        //Horizontal axis
+        @if $spacing-horizontal != null {
+            .#{$property}-#{$spacing-horizontal}-#{$name} {
+                #{$property}-left: $value !important;
+                #{$property}-right: $value !important;
+
+                // Each breakpoint
+                @each $breakpoint in $spacing-breakpoints {
+                    &-#{$breakpoint} {
+                        @include for-size(#{$breakpoint}) {
+                            #{$property}-left: $value !important;
+                            #{$property}-right: $value !important;
+                        }
+                    }
+                }
+            }
+        }
+
+        // Vertical axis
+        @if $spacing-vertical != null {
+            .#{$property}-#{$spacing-vertical}-#{$name} {
+                #{$property}-top: $value !important;
+                #{$property}-bottom: $value !important;
+
+                // Each breakpoint
+                @each $breakpoint in $spacing-breakpoints {
+                    &-#{$breakpoint} {
+                        @include for-size(#{$breakpoint}) {
+                            #{$property}-top: $value !important;
+                            #{$property}-bottom: $value !important;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+/*#endregion*/
+
+/* GAP */
+/*#region*/
+@each $name, $value in $spacings {
+    .gap-#{$name} {
+        gap: $value !important;
+
+        // Each breakpoint
+        @each $breakpoint in $spacing-breakpoints {
+            &-#{$breakpoint} {
+                @include for-size(#{$breakpoint}) {
+                    gap: $value !important;
+                }
+            }
+        }
+    }
+}
+/*#endregion*/
+
+/* POSITION */
+/*#region*/
+.position-absolute {
+    position: absolute !important;
+
+    &--top {
+        @extend .position-absolute;
+        top: 0px;
+    }
+
+    &--bottom {
+        @extend .position-absolute;
+        bottom: 0px;
+    }
+
+    &--left {
+        @extend .position-absolute;
+        left: 0px;
+    }
+
+    &--right {
+        @extend .position-absolute;
+        right: 0px;
+    }
+}
+
+.position-relative {
+    position: relative !important;
+}
+
+.position-static {
+    position: static !important;
+}
+
+.position-fixed {
+    position: fixed !important;
+
+    &--top {
+        @extend .position-fixed;
+        top: 0px;
+    }
+
+    &--bottom {
+        @extend .position-fixed;
+        bottom: 0px;
+    }
+
+    &--left {
+        @extend .position-fixed;
+        left: 0px;
+    }
+
+    &--right {
+        @extend .position-fixed;
+        right: 0px;
+    }
+}
+
+.position-sticky {
+    position: sticky !important;
+
+    &--top {
+        @extend .position-sticky;
+        top: 0;
+    }
+
+    &--right {
+        @extend .position-sticky;
+        right: 0;
+    }
+
+    &--bottom {
+        @extend .position-sticky;
+        bottom: 0;
+    }
+
+    &--left {
+        @extend .position-sticky;
+        left: 0;
+    }
+}
+/*#endregion*/
+
+/* TEXT ALIGNMENT + BEHAVIOR */
+/*#region*/
+.text-align-left {
+    text-align: left !important;
+}
+
+.text-align-center {
+    text-align: center !important;
+}
+
+.text-align-right {
+    text-align: right !important;
+}
+
+.text-hyphenate {
+    hyphens: auto;
+}
+
+.text-nowrap {
+    white-space: nowrap;
+}
+
+.text-truncate-clip {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: clip;
+}
+
+.text-truncate-ellipsis {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+/*#endregion*/
+
+/* SIZING */
+/*#region*/
+@each $size in $sizes {
+    .size-#{$size} {
+        font-size: var(--size-#{$size});
+        // Each breakpoint
+        @each $breakpoint in $spacing-breakpoints {
+            &-#{$breakpoint} {
+                @include for-size(#{$breakpoint}) {
+                    font-size: var(--size-#{$size});
+                }
+            }
+        }
+    }
+}
+/*#endregion*/
+
+/* WIDTH + HEIGHT */
+/*#region*/
+.width-100 {
+    width: 100% !important;
+}
+
+.height-100 {
+    height: 100% !important;
+}
+
+.width-100-vw {
+    width: 100vw !important;
+}
+
+.height-100-vh {
+    height: 100vh !important;
+}
+
+.resizable {
+    resize: both;
+    overflow: auto;
+}
+/*#endregion*/
+
+/* FONT WEIGHT + TEXT DECORATION + TEXT TRANSFORM */
+/*#region*/
+.font-weight-normal {
+    font-weight: normal !important;
+}
+
+.font-weight-bold {
+    font-weight: bold !important;
+}
+
+.font-weight-lighter {
+    font-weight: lighter !important;
+}
+
+.font-weight-bolder {
+    font-weight: bolder !important;
+}
+
+.font-style-italic {
+    font-style: italic !important;
+}
+
+.font-style-normal {
+    font-style: normal !important;
+}
+
+.text-decoration-underline {
+    text-decoration: underline !important;
+}
+
+.text-decoration-line-through {
+    text-decoration: line-through !important;
+}
+
+.text-transform-uppercase {
+    text-transform: uppercase !important;
+}
+
+.text-transform-lowercase {
+    text-transform: lowercase !important;
+}
+
+.text-transform-capitalize {
+    text-transform: capitalize !important;
+}
+
+.text-transform-none {
+    text-transform: none !important;
+}
+/*#endregion*/
+
+/* FONT FAMILY */
+/*#region*/
+.font-family-display {
+    font-family: var(--font-family-display) !important;
+}
+
+.font-family-main {
+    font-family: var(--font-family-main) !important;
+}
+
+.font-family-sans-serif {
+    font-family: var(--font-family-sans-serif) !important;
+}
+
+.font-family-serif {
+    font-family: var(--font-family-serif) !important;
+}
+
+.font-family-mono {
+    font-family: var(--font-family-mono) !important;
+}
+/*#endregion*/
+
+/* DISPLAY */
+/*#region*/
+$display-types: ('block', 'inline-block', 'flex', 'inline-flex', 'none');
+
+// Generates display types from the list above.  Add or remove types from the list above.
+@each $display-type in $display-types {
+    .display-#{$display-type} {
+        display: #{$display-type} !important;
+
+        // Each breakpoint
+        @each $breakpoint in $spacing-breakpoints {
+            &-#{$breakpoint} {
+                @include for-size(#{$breakpoint}) {
+                    display: #{$display-type} !important;
+                }
+            }
+        }
+    }
+}
+
+// Element still in DOM but not visible
+.display-hidden {
+    position: absolute !important;
+    overflow: hidden !important;
+    clip: rect(0 0 0 0) !important;
+    height: 1px !important;
+    width: 1px !important;
+    margin: -1px !important;
+    padding: 0 !important;
+    border: 0 !important;
+
+    &-mobile {
+        @include for-size(mobile) {
+            position: absolute !important;
+            overflow: hidden !important;
+            clip: rect(0 0 0 0) !important;
+            height: 1px !important;
+            width: 1px !important;
+            margin: -1px !important;
+            padding: 0 !important;
+            border: 0 !important;
+        }
+    }
+    &-tablet-portrait {
+        @include for-size(tablet-portrait) {
+            position: absolute !important;
+            overflow: hidden !important;
+            clip: rect(0 0 0 0) !important;
+            height: 1px !important;
+            width: 1px !important;
+            margin: -1px !important;
+            padding: 0 !important;
+            border: 0 !important;
+        }
+    }
+    &-tablet {
+        @include for-size(tablet) {
+            position: absolute !important;
+            overflow: hidden !important;
+            clip: rect(0 0 0 0) !important;
+            height: 1px !important;
+            width: 1px !important;
+            margin: -1px !important;
+            padding: 0 !important;
+            border: 0 !important;
+        }
+    }
+    &-desktop {
+        @include for-size(desktop) {
+            position: absolute !important;
+            overflow: hidden !important;
+            clip: rect(0 0 0 0) !important;
+            height: 1px !important;
+            width: 1px !important;
+            margin: -1px !important;
+            padding: 0 !important;
+            border: 0 !important;
+        }
+    }
+    &-desktop-large {
+        @include for-size(desktop-large) {
+            position: absolute !important;
+            overflow: hidden !important;
+            clip: rect(0 0 0 0) !important;
+            height: 1px !important;
+            width: 1px !important;
+            margin: -1px !important;
+            padding: 0 !important;
+            border: 0 !important;
+        }
+    }
+}
+/*#endregion*/
+
+/* FLEX  */
+/*#region*/
+
+.flex-center {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+}
+
+.flex-justify-start {
+    justify-content: flex-start !important;
+}
+
+.flex-justify-center {
+    justify-content: center !important;
+}
+
+.flex-justify-end {
+    justify-content: flex-end !important;
+}
+
+.flex-justify-space-around {
+    justify-content: space-around !important;
+}
+
+.flex-justify-space-between {
+    justify-content: space-between !important;
+}
+
+.flex-justify-space-evenly {
+    justify-content: space-evenly !important;
+}
+
+.flex-justify-stretch {
+    justify-content: stretch !important;
+}
+
+.flex-align-start {
+    align-items: flex-start !important;
+}
+
+.flex-align-center {
+    align-items: center !important;
+}
+
+.flex-align-end {
+    align-items: flex-end !important;
+}
+
+.flex-align-stretch {
+    align-items: stretch !important;
+}
+
+.flex-justify-self-start {
+    justify-self: flex-start !important;
+}
+
+.flex-justify-self-center {
+    justify-self: center !important;
+}
+
+.flex-justify-self-end {
+    justify-self: flex-end !important;
+}
+
+.flex-align-self-start {
+    align-self: flex-start !important;
+}
+
+.flex-align-self-center {
+    align-self: center !important;
+}
+
+.flex-align-self-end {
+    align-self: flex-end !important;
+}
+/*#endregion*/
+
+/* OVERFLOW */
+/*#region*/
+
+.overflow-x {
+    overflow-x: auto;
+}
+
+.overflow-y {
+    overflow-y: auto;
+}
+
+.overflow-hidden {
+    overflow: hidden;
+}
+
+.overflow-auto,
+.overflow-xy {
+    overflow: auto;
+}
+/*#endregion*/
+
+/* Z-INDEX */
+/*#region*/
+
+.z-index-normal {
+    z-index: 0;
+}
+
+.z-index-page {
+    z-index: var(--z-index-page);
+}
+
+.z-index-global {
+    z-index: var(--z-index-global);
+}
+
+.z-index-max {
+    z-index: var(--z-index-max);
+}
+/*#endregion*/
+
+/* TEXT COLOR */
+/*#region*/
+.text-color-normal {
+    color: var(--color-text);
+}
+
+.text-color-dim {
+    color: var(--color-text-dim);
+}
+
+.text-color-hint {
+    color: var(--color-text-hint);
+}
+
+.text-color-inverse {
+    color: var(--color-text-inverse);
+}
+
+.text-color-inverse-dim {
+    color: var(--color-text-inverse-dim);
+}
+
+.text-color-info {
+    color: var(--color-text-info);
+}
+
+.text-color-warning {
+    color: var(--color-text-warning);
+}
+
+.text-color-danger {
+    color: var(--color-text-danger);
+}
+/*#endregion*/
+
+/* BORDER RADII */
+/*#region*/
+
+.border-radius-tiny {
+    border-radius: var(--radius-tiny);
+}
+
+.border-radius-small {
+    border-radius: var(--radius-small);
+}
+
+.border-radius-medium {
+    border-radius: var(--radius-medium);
+}
+
+.border-radius-large {
+    border-radius: var(--radius-large);
+}
+/*#endregion*/
+
+/* WHITE TRANSPARENCY BG COLORS */
+/*#region*/
+.bg-color-white-100 {
+    background-color: var(--color-white-100);
+}
+.bg-color-white-95 {
+    background-color: var(--color-white-95);
+}
+.bg-color-white-90 {
+    background-color: var(--color-white-90);
+}
+.bg-color-white-80 {
+    background-color: var(--color-white-80);
+}
+.bg-color-white-70 {
+    background-color: var(--color-white-70);
+}
+.bg-color-white-60 {
+    background-color: var(--color-white-60);
+}
+.bg-color-white-50 {
+    background-color: var(--color-white-50);
+}
+.bg-color-white-40 {
+    background-color: var(--color-white-40);
+}
+.bg-color-white-30 {
+    background-color: var(--color-white-30);
+}
+.bg-color-white-20 {
+    background-color: var(--color-white-20);
+}
+.bg-color-white-10 {
+    background-color: var(--color-white-10);
+}
+.bg-color-white-05 {
+    background-color: var(--color-white-05);
+}
+.bg-color-white-04 {
+    background-color: var(--color-white-04);
+}
+.bg-color-white-03 {
+    background-color: var(--color-white-03);
+}
+.bg-color-white-02 {
+    background-color: var(--color-white-02);
+}
+.bg-color-white-01 {
+    background-color: var(--color-white-01);
+}
+/*#endregion*/
+
+/* BLACK TRANSPARENCY BG COLORS */
+/*#region*/
+.bg-color-black-100 {
+    background-color: var(--color-black-100);
+}
+.bg-color-black-95 {
+    background-color: var(--color-black-95);
+}
+.bg-color-black-90 {
+    background-color: var(--color-black-90);
+}
+.bg-color-black-80 {
+    background-color: var(--color-black-80);
+}
+.bg-color-black-70 {
+    background-color: var(--color-black-70);
+}
+.bg-color-black-60 {
+    background-color: var(--color-black-60);
+}
+.bg-color-black-50 {
+    background-color: var(--color-black-50);
+}
+.bg-color-black-40 {
+    background-color: var(--color-black-40);
+}
+.bg-color-black-30 {
+    background-color: var(--color-black-30);
+}
+.bg-color-black-20 {
+    background-color: var(--color-black-20);
+}
+.bg-color-black-10 {
+    background-color: var(--color-black-10);
+}
+.bg-color-black-05 {
+    background-color: var(--color-black-05);
+}
+.bg-color-black-04 {
+    background-color: var(--color-black-04);
+}
+.bg-color-black-03 {
+    background-color: var(--color-black-03);
+}
+.bg-color-black-02 {
+    background-color: var(--color-black-02);
+}
+.bg-color-black-01 {
+    background-color: var(--color-black-01);
+}
+/*#endregion*/
+
+/* GRAY BG COLORS */
+/*#region*/
+.bg-color-gray-98 {
+    background-color: var(--color-gray-98);
+}
+.bg-color-gray-97 {
+    background-color: var(--color-gray-97);
+}
+.bg-color-gray-96 {
+    background-color: var(--color-gray-96);
+}
+.bg-color-gray-95 {
+    background-color: var(--color-gray-95);
+}
+.bg-color-gray-90 {
+    background-color: var(--color-gray-90);
+}
+.bg-color-gray-80 {
+    background-color: var(--color-gray-80);
+}
+.bg-color-gray-70 {
+    background-color: var(--color-gray-70);
+}
+.bg-color-gray-60 {
+    background-color: var(--color-gray-60);
+}
+.bg-color-gray-50 {
+    background-color: var(--color-gray-50);
+}
+.bg-color-gray-40 {
+    background-color: var(--color-gray-40);
+}
+.bg-color-gray-30 {
+    background-color: var(--color-gray-30);
+}
+.bg-color-gray-20 {
+    background-color: var(--color-gray-20);
+}
+.bg-color-gray-10 {
+    background-color: var(--color-gray-10);
+}
+.bg-color-gray-05 {
+    background-color: var(--color-gray-05);
+}
+/*#endregion*/
+
+/* SEMANTIC BG COLORS */
+/*#region*/
+.bg-color-brand {
+    background-color: var(--color-brand-primary) !important;
+}
+
+.bg-color-brand-secondary {
+    background-color: var(--color-brand-secondary) !important;
+}
+
+.bg-color-info {
+    background-color: var(--color-brand-primary) !important;
+}
+
+.bg-color-success {
+    background-color: var(--color-success) !important;
+}
+
+.bg-color-warning {
+    background-color: var(--color-warning) !important;
+}
+
+.bg-color-danger {
+    background-color: var(--color-danger) !important;
+}
+/*#endregion*/

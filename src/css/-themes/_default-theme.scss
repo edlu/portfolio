@@ -1,0 +1,122 @@
+// *********************
+//   THEME VARIABLES
+//
+// - Font Import
+// - Font Variables
+// - General
+//   - Font
+// - Colors UI Colors
+//   - UI Colors
+//   - Text Colors
+// - Headings
+// - Page
+//   - Background Color
+//   - Font
+// - Page Header
+// - Tab Nav
+// - Card
+// - Button
+// - Form
+// - Table
+// - Group
+// - Column
+//
+// *********************
+
+/* FONT IMPORT */
+// When using Google fonts, 'wght' and 'ital' must be declared
+// in separate @import lines for it to work in Safari
+// otherwise the font won't load.
+
+// Display font (defaults to main font if not defined)
+
+// Sans serif font (same as display in default theme)
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300..800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital@1&display=swap");
+
+// Serif font
+@import url("https://fonts.googleapis.com/css2?family=Bitter:wght@100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Bitter:ital@1&display=swap");
+
+// Monospace font
+@import url("https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@200..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital@1&display=swap");
+
+:root {
+    /* FONTS */
+    // Import fonts above outside of :root first
+    --font-family-display: "Open Sans", sans-serif; /* defaults to --font-family-main if not defined */
+    --font-family-sans-serif: "Open Sans", sans-serif;
+    --font-family-serif: "Bitter", serif;
+    --font-family-mono: "Source Code Pro", monospace;
+
+    /*************************
+    /** THEME OVERRIDES
+    /*************************
+
+    /**** GENERAL ****/
+    /* FONT */
+    --font-family-main: var(--font-family-sans-serif);
+
+    /* SIZE */
+    //--base-type-size: 1rem; // 16px = 1rem. This defines the base size for EVERYTHING
+
+    // Use a tool like type-scale.com to redefine size scaling
+
+    // Major Second
+    //--size-9xl: 3.247em;
+    //--size-8xl: 2.887;
+    //--size-7xl: 2.566em;
+    //--size-6xl: 2.281em;
+    //--size-5xl: 2.027em;
+    //--size-4xl: 1.802em;
+    //--size-3xl: 1.602em;
+    //--size-2xl: 1.424em;
+    //--size-xl: 1.266em;
+    //--size-l: 1.125em;
+    //--size-m: 1em;
+    //--size-s: 0.889em;
+    //--size-xs: 0.79em;
+    //--size-2xs: 0.702em;
+    //--size-3xs: 0.624em;
+
+    // Minor Second
+    // --size-9xl: 1.913rem;
+    // --size-8xl: 1.793rem;
+    // --size-7xl: 1.68rem;
+    // --size-6xl: 1.575rem;
+    // --size-5xl: 1.476rem;
+    // --size-4xl: 1.383rem;
+    // --size-3xl: 1.296rem;
+    // --size-2xl: 1.215rem;
+    // --size-xl: 1.138rem;
+    // --size-l: 1.067rem;
+    // --size-m: 1em;
+    // --size-s: 0.937rem;
+    // --size-xs: 0.878rem;
+    // --size-2xs: 0.823rem;
+    // --size-3xs: 0.772rem;
+
+    //Perfect Fourth
+    // --size-8xl: 17.713rem;
+    // --size-8xl: 13.288em;
+    // --size-7xl: 9.969em;
+    // --size-6xl: 7.478em;
+    // --size-5xl: 5.61em;
+    // --size-4xl: 4.209em;
+    // --size-3xl: 3.157em;
+    // --size-2xl: 2.369em;
+    // --size-xl: 1.777em;
+    // --size-l: 1.333em;
+    // --size-m: 1em;
+    // --size-s: 0.75em;
+    // --size-xs: 0.563em;
+    // --size-2xs: 0.422em;
+    // --size-3xs: 0.317em;
+
+    /* GAPS */
+
+    /**** PAGE ****/
+    --color-page-bg: var(--color-white-100);
+    /**** COMPONENTS ****/
+}

@@ -1,0 +1,148 @@
+:root {
+    // LIGHT THEME
+    --color-modal-backdrop: var(--color-black-50);
+    --color-modal-card-bg: var(--color-white-100);
+    --color-modal-card-header-bg: var(--color-white-100);
+    --color-modal-card-footer-bg: var(--color-white-100);
+    --color-modal-card-border: var(--color-gray-90);
+
+    // DARK THEME
+    --color-modal-backdrop-dark: var(--color-black-50);
+    --color-modal-card-bg-dark: var(--color-gray-20);
+    --color-modal-card-header-bg-dark: var(--color-gray-20);
+    --color-modal-card-footer-bg-dark: var(--color-gray-20);
+    --color-modal-card-border-dark: var(--color-gray-30);
+}
+.modal {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    margin: var(--spacing-1x);
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    background-color: var(--color-modal-backdrop);
+    overflow: hidden;
+    transition: all 0.2s ease-in-out;
+    z-index: var(--z-index-global);
+
+    &__card {
+        display: flex;
+        flex-direction: column;
+        max-width: 40em;
+        max-height: 90vh;
+        background-color: var(--color-modal-card-bg);
+        border: 1px solid var(--color-modal-card-border);
+        border-radius: var(--radius-large);
+        box-shadow: var(--shadow-elevation-high);
+        overflow: hidden;
+        animation-name: slidedown;
+        animation-duration: 0.25s;
+        animation-timing-function: ease-out;
+        animation-fill-mode: backwards;
+    }
+
+    @keyframes slidedown {
+        from {
+            opacity: 0;
+            transform: translateY(var(--spacing-2x));
+        }
+
+        to {
+            transform: translate(0);
+            opacity: 1;
+        }
+    }
+
+    &__header {
+        display: grid;
+        background-color: var(--color-modal-card-header-bg);
+        grid-template-columns: 3.125em auto 3.125em;
+        grid-template-rows: 1fr 1fr;
+        grid-template-areas: 'control-left title control-right' '. icon .';
+        padding: var(--spacing-2x);
+        min-height: var(--spacing-6x);
+        border-bottom: 1px solid var(--color-modal-card-border);
+        flex: 1 1 auto;
+    }
+
+    &__title-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        grid-area: title;
+        gap: var(--spacing-half);
+    }
+
+    &__title {
+        margin: 0;
+    }
+
+    &__subtitle {
+        margin: 0;
+        color: var(--color-text-dim);
+    }
+
+    &__control-left {
+        grid-area: control-left;
+        justify-self: center;
+        align-self: center;
+    }
+
+    &__control-right {
+        grid-area: control-right;
+        justify-self: center;
+        align-self: center;
+    }
+
+    &__type-icon {
+        grid-area: icon;
+        justify-self: center;
+        align-self: end;
+        font-size: var(--size-6xl);
+
+        &--success {
+            @extend .modal__type-icon;
+            color: var(--color-success);
+        }
+
+        &--warning {
+            @extend .modal__type-icon;
+            color: var(--color-warning);
+        }
+
+        &--danger {
+            @extend .modal__type-icon;
+            color: var(--color-danger);
+        }
+    }
+
+    &__body {
+        flex: 1 1 auto;
+        overflow-y: auto;
+        padding: var(--spacing-2x);
+    }
+
+    &__footer {
+        border-top: 1px solid var(--color-modal-card-border);
+        display: flex;
+        justify-content: center;
+        min-height: var(--spacing-2x);
+        padding: var(--spacing-1x) var(--spacing-2x);
+        flex: 0 0 auto;
+    }
+}
+
+body.theme--dark {
+    --color-modal-backdrop: var(--color-modal-backdrop-dark);
+    --color-modal-card-bg: var(--color-modal-card-bg-dark);
+    --color-modal-card-header-bg: var(--color-modal-card-bg-dark);
+    --color-modal-card-footer-bg: var(--color-modal-card-bg-dark);
+    --color-modal-card-border: var(--color-modal-card-border-dark);
+}

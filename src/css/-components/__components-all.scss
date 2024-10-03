@@ -1,0 +1,22 @@
+/*
+This file is used to contain all component imports.
+Files inside this folder should contain all styles relating to a reusable component.
+
+** WE SHOULD NOT USE THIS FILE IN THE MAIN styles.scss file
+
+Each angular component should pull in their respective styles so we avoid loading every component's style unnecessarily.
+*/
+
+@use '_page.scss';
+@use '_button.scss';
+@use '_dropdown-menu.scss';
+@use '_card.scss';
+@use '_form.scss';
+@use '_icon.scss';
+@use '_panel.scss';
+@use '_menu.scss';
+@use '_tab-nav.scss';
+@use '_modal.scss';
+@use '_seat-modal.scss';
+@use '_page-header.scss';
+@use '_table.scss';

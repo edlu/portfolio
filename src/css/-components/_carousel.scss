@@ -1,0 +1,102 @@
+.carousel {
+    $p: &;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+
+    &__counter {
+        margin-bottom: 1em;
+    }
+
+    carousel-item {
+        flex-shrink: 0;
+        flex-basis: 80%;
+        height: auto;
+        scroll-snap-align: center;
+        scroll-snap-type: x proximity;
+
+        &:not(:last-child) {
+            margin-right: 1em;
+        }
+
+        &:first-child,
+        &:last-child {
+            display: flex;
+            flex-basis: 90%;
+
+            #{$p}__item-container {
+                width: 89%;
+            }
+        }
+
+        &:first-child::before,
+        &:last-child::after {
+            content: '';
+            width: 10%;
+        }
+    }
+
+    &__items {
+        display: flex;
+        overflow-x: auto;
+        overflow-y: hidden;
+        width: 100%;
+        scroll-behavior: smooth;
+        scroll-snap-type: x mandatory;
+        // hide scrollbar for Chrome, Safari, and Opera
+        &::-webkit-scrollbar {
+            display: none;
+        }
+        // hide scrollbar for IE / Edge
+        -ms-overflow-style: none;
+        // hide scrollbar for Firefox
+        scrollbar-width: none;
+
+        &--single {
+            justify-content: center;
+
+            carousel-item {
+                &:first-child,
+                &:last-child {
+                    display: block;
+                    flex-basis: 80%;
+                }
+
+                &:first-child::before,
+                &:last-child::after {
+                    content: '';
+                    width: unset;
+                }
+            }
+        }
+    }
+
+    &__scroll-markers {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        height: auto;
+        margin-top: 1em;
+        font-size: $text-2xs;
+    }
+
+    &__scroll-marker {
+        height: 1em;
+        width: 1em;
+        border-radius: 50%;
+        background-color: $black-100;
+        cursor: pointer;
+        opacity: 0.1;
+        transition: opacity 0.3s;
+
+        &:not(:last-child) {
+            margin-right: 1em;
+        }
+
+        &--active {
+            opacity: 0.7;
+        }
+    }
+}

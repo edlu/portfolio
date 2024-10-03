@@ -1,0 +1,108 @@
+:root {
+    --padding-table: var(--spacing-1x);
+
+    // Light
+    --color-table-bg: transparent;
+    --color-table-row-stripe-bg: var(--color-black-02);
+    --color-table-row-hover-bg: var(--color-black-03);
+    --color-table-cell-border: var(--color-gray-90);
+
+    // Dark
+    --color-table-bg-dark: transparent;
+    --color-table-row-stripe-bg-dark: var(--color-white-02);
+    --color-table-row-hover-bg-dark: var(--color-white-03);
+    --color-table-cell-border-dark: var(--color-white-05);
+}
+
+.table {
+    width: 100%;
+    border-spacing: 0;
+    border-collapse: separate;
+    line-height: normal;
+
+    %cell {
+        padding: var(--padding-table) var(--spacing-1x);
+        text-align: left;
+    }
+
+    tr {
+        transition: all var(--transition-fast);
+    }
+
+    th,
+    td {
+        @extend %cell;
+    }
+
+    th {
+        font-weight: bold;
+    }
+
+    &--striped {
+        tr:nth-child(even) td {
+            background-color: var(--color-table-row-stripe-bg);
+        }
+    }
+
+    &--row-borders {
+        tr:not(:last-child) td,
+        th {
+            border-bottom: 1px solid;
+            border-color: var(--color-table-cell-border);
+        }
+    }
+
+    &--column-borders {
+        th:not(:last-of-type),
+        td:not(:last-of-type) {
+            border-right: 1px solid;
+            border-color: var(--color-table-cell-border);
+        }
+    }
+
+    &--row-hover {
+        tbody tr:hover {
+            background-color: var(--color-table-row-hover-bg);
+        }
+    }
+
+    /* Table utility classes */
+    &__col-stretch {
+        width: 100%;
+    }
+
+    &__allow-overflow {
+        overflow: visible;
+    }
+
+    .sticky-right {
+        position: sticky;
+        right: 0;
+    }
+
+    .sticky-left {
+        position: sticky;
+        left: 0;
+    }
+
+    .sticky-top {
+        position: sticky;
+        top: 0;
+        z-index: 1;
+    }
+
+    .no-border-right {
+        border-right: none;
+    }
+
+    .no-border-left {
+        border-left: none;
+    }
+}
+
+.theme--dark {
+    --color-table-bg: transparent;
+    --color-table-row-stripe-bg: var(--color-table-row-stripe-bg-dark);
+    --color-table-row-hover-bg: var(--color-table-row-hover-bg-dark);
+    --color-table-cell-border: var(--color-table-cell-border-dark);
+}

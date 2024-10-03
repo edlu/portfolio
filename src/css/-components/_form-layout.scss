@@ -1,0 +1,317 @@
+//***LAYOUT***
+//
+//.form
+//  .form-group
+//    .form-items (transclude)
+//      .form-item
+//        .form-item__label
+//        .form-item__input-column
+//          .form-item__description
+//          .form-item__*-wrapper
+//          .form-item__actions
+//          .form-item__validation
+
+form-group {
+    display: block;
+}
+
+form-input,
+form-select,
+form-select-country,
+form-checkbox,
+form-actions,
+form-switch {
+    display: block;
+}
+
+// TODO: ED - does this need to be removed?
+.form {
+    width: 100%;
+
+    & > * + * {
+        margin-top: 1em;
+    }
+}
+
+.form-group {
+    display: flex;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    margin-top: 1em;
+
+    .form-items {
+        flex-grow: 1;
+        flex-basis: 50%;
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+        grid-auto-rows: auto;
+        column-gap: 1.5em;
+
+        > * + * {
+            margin-top: 0.5em;
+        }
+
+        form-checkbox,
+        form-select-country,
+        form-input,
+        form-select,
+        form-radio-group,
+        form-switch,
+        form-select-date {
+            grid-column: 1 / -1;
+        }
+
+        .form-item {
+            // form-item style adjustments only if inside of a form-group
+            flex-direction: column;
+            flex-wrap: nowrap;
+            padding: 0;
+
+            .form-item__label {
+                font-weight: 600;
+            }
+
+            .form-item__label
+                + .form-item__input-column
+                > .form-item__description {
+                margin-top: 0; // no margin if adjacent to a form-item__label within form-group
+            }
+        }
+
+        .form-group__description {
+            margin: 0.75em 0 0.5em 0;
+            font-size: $text-s;
+            color: $text-color-dim;
+            line-height: normal;
+        }
+    }
+
+    &__label {
+        font-weight: bold;
+        margin: 0.5em 2em 1em 0;
+        width: 14em;
+        line-height: normal;
+    }
+
+    &__description {
+        margin: 0.5em 0 1em 0;
+        font-size: $text-s;
+        color: $text-color-dim;
+        line-height: normal;
+        grid-column: 1 / -1;
+    }
+}
+
+.form-item {
+    $form-item: &;
+
+    display: flex;
+    flex-wrap: wrap;
+    padding-top: 0.75em;
+
+    &__label {
+        font-weight: bold;
+        margin: 0.5em 2em 0.25em 0;
+        width: 14em;
+        line-height: normal;
+
+        & + #{$form-item}__input-column > #{$form-item}__description {
+            margin-top: 0.75em; // margin if adjacent to a form-item__label
+        }
+
+        &--required::after {
+            content: '*';
+            color: $red;
+            margin-left: 0.25em;
+        }
+    }
+
+    &__input-column {
+        display: flex;
+        flex-direction: column;
+        flex-grow: 1;
+        flex-basis: 50%;
+    }
+
+    &__description {
+        margin: 0.75em 0 0.5em 0;
+        font-size: $text-s;
+        color: $text-color-dim;
+        line-height: normal;
+    }
+
+    /* WRAPPERS FOR EACH FORM ELEMENT TYPE */
+    &__input-wrapper {
+        position: relative;
+        max-width: 20em;
+
+        .form-item__input[ng-maxlength]:focus {
+            padding-right: 4em !important; // makes room for character counter
+        }
+
+        .form-item__char-counter {
+            right: 1em;
+            top: 1.1em;
+        }
+
+        @media screen and (max-width: $breakpoint-tablet) {
+            max-width: none;
+        }
+    }
+
+    &__radio-group-wrapper {
+        > label {
+            width: 14em;
+            margin: 0 2em 1em 0;
+        }
+
+        .form-item__radio-options {
+            /*#{$form-item}__radio-options {*/
+            grid-template-columns: auto;
+            margin: 0.5em 0;
+
+            label {
+                @extend .radio-wrapper;
+                justify-content: flex-start;
+            }
+
+            form-radio + form-radio > label {
+                margin-top: 0.25em;
+            }
+        }
+    }
+
+    &__checkbox-group-wrapper {
+        margin: 0.5em 0 0 0;
+        /* Needs styling to better control width */
+    }
+
+    &__textarea-wrapper {
+        position: relative;
+        max-width: 20em;
+
+        .form-item__char-counter {
+            position: relative;
+            margin-top: 0.5em;
+        }
+
+        @media screen and (max-width: $breakpoint-tablet) {
+            max-width: none;
+        }
+    }
+
+    &__slider-wrapper {
+        max-width: 20em;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+
+        @media screen and (max-width: $breakpoint-tablet) {
+            max-width: none;
+        }
+    }
+
+    &__switch-wrapper {
+    }
+
+    &__select-wrapper {
+        max-width: 20em;
+
+        @media screen and (max-width: $breakpoint-tablet) {
+            max-width: none;
+        }
+    }
+
+    &__select-date-wrapper {
+        display: flex;
+        margin-top: 0.75em;
+        grid-gap: 0.75em;
+
+        form-select {
+            flex-grow: 1;
+        }
+    }
+    /* END ELEMENT WRAPPERS */
+
+    &__input {
+        width: 100%;
+        transition: all 0.2s ease-out;
+        /* Please keep this commented out until form error handling is updated */
+        /*&:invalid {
+            border: 1px solid $red;
+            box-shadow: none;
+
+            & ~ .form-item__validation {
+                display: flex; 
+            }
+        }*/
+    }
+
+    &__char-counter {
+        position: absolute;
+        display: none;
+        background-color: $black-05;
+        border-radius: 0.5em;
+        padding: 0.25em;
+        font-size: $text-xs;
+    }
+
+    &__input:focus ~ .form-item__char-counter {
+        display: inline-block;
+    }
+
+    &__actions {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        font-size: $text-s;
+
+        > * + * {
+            margin-left: 1em;
+            padding: 0.5em 0;
+        }
+
+        &--disabled {
+            opacity: 0.5;
+            pointer-events: none;
+            cursor: not-allowed;
+        }
+
+        &--component {
+            margin-top: 0.75em;
+        }
+    }
+
+    &__validation {
+        display: none;
+        padding-top: calc(1em / 1.5);
+        flex-direction: column;
+        align-items: flex-start;
+        line-height: normal;
+        grid-area: validation;
+        color: $red;
+        font-size: $text-s;
+    }
+
+    &--vertical {
+        flex-direction: column;
+        padding: 0;
+    }
+
+    .has-error {
+        & ~ .form-item__validation {
+            display: flex;
+        }
+
+        & .form-item__input {
+            border: 1px solid $red;
+            box-shadow: none;
+        }
+    }
+}
+
+form-select-language {
+    .form-item__select-wrapper {
+        max-width: 5em;
+    }
+}

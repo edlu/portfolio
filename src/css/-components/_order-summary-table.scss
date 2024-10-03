@@ -1,0 +1,51 @@
+.order-summary-table {
+    &__wrapper {
+        background-color: $bg-color-secondary;
+    }
+
+    th,
+    td {
+        padding: 0.25em 0;
+    }
+
+    th {
+        font-weight: normal;
+    }
+
+    &__order-items {
+        tr:last-child th,
+        tr:last-child td {
+            padding-bottom: 0.5em;
+        }
+    }
+
+    &__total {
+        tr:first-child th,
+        tr:first-child td {
+            padding-top: 0.5em;
+        }
+
+        tr:last-child th,
+        tr:last-child td {
+            padding-bottom: 0.5em;
+        }
+    }
+
+    &__total-row {
+        th,
+        td {
+            font-weight: bold;
+            border-top: 1px solid $black-10;
+        }
+    }
+
+    &__balance-row {
+        th,
+        td {
+            border-top: 1px solid $black-10;
+            padding-top: 0.5em;
+            vertical-align: middle;
+            font-weight: bold;
+        }
+    }
+}

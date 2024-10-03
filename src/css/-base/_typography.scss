@@ -1,0 +1,210 @@
+// *********************
+// TYPOGRAPHY
+//
+// Sets global typography
+// - Type sizes
+// - Headings <h1 > -<h6 >
+// - Paragraphs <p >
+// - Text-level markup
+// - Multi-line behavior util classes
+// - Lists <ul >, <ol >, <li >, <dt>, <dd>
+// - Abbreviations, Acronyms <abbr >, <acronym >
+// - Citations <cite >
+// - Keyboard Input <kbd >
+// - Links <a >
+//
+// *********************
+
+/* HEADINGS */
+h1,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    // Headings used for long-form text content
+    font-weight: 800;
+    margin-bottom: var(--spacing-2x);
+    //white-space: nowrap;
+    color: var(--color-heading);
+}
+
+h1 {
+    font-size: var(--size-4xl);
+}
+h2 {
+    font-size: var(--size-3xl);
+}
+h3 {
+    font-size: var(--size-2xl);
+}
+h4 {
+    font-size: var(--size-xl);
+}
+h5 {
+    font-size: var(--size-l);
+}
+h6 {
+    font-size: var(--size-m);
+}
+
+/* PARAGRAPHS */
+p {
+    line-height: 150%;
+    margin-bottom: var(--spacing-2x);
+}
+
+/* TEXT-LEVEL MARKUP */
+strong,
+b {
+    font-weight: 700;
+}
+
+em,
+dfn,
+cite,
+i,
+var {
+    font-style: italic;
+    font-variation-settings: 'ital' 1; // for variable fonts
+}
+
+abbr,
+acronym {
+    text-decoration-style: dashed;
+    font-weight: 700;
+
+    &:hover {
+        text-decoration-color: var(--color-text-dim);
+        color: var(--color-link-hover);
+        cursor: help;
+    }
+}
+
+// pre {
+//     padding: 0;
+//     margin: 0;
+//     display: block;
+// }
+
+code {
+    color: var(--color-text);
+    background-color: var(--color-text-bg);
+    padding: var(--spacing-eighth) var(--spacing-half);
+    margin: 0 var(--spacing-eighth);
+    border-radius: var(--spacing-eighth);
+}
+
+kbd {
+    @extend code;
+    font-weight: 600;
+}
+
+q {
+    @extend p;
+    font-style: italic;
+    font-variation-settings: 'ital' 1; // for variable fonts
+    quotes: '“' '”' '‘' '’';
+
+    &::before {
+        content: open-quote;
+    }
+
+    &::after {
+        content: close-quote;
+    }
+}
+
+samp,
+tt,
+kbd,
+code {
+    font-family: var(--font-family-mono);
+}
+
+/* LISTS */
+
+ul,
+ol,
+menu {
+    list-style-position: outside;
+    list-style-type: circle;
+    margin: 0 0 var(--spacing-2x) var(--spacing-2x);
+}
+
+li,
+dt,
+dd {
+    line-height: normal;
+    margin-bottom: var(--spacing-half);
+}
+
+li ul,
+li ol {
+    margin: var(--spacing-half) var(--spacing-2x);
+}
+
+dd {
+    margin-left: var(--spacing-1x);
+    font-style: italic;
+}
+
+/* FORM ELEMENTS */
+form,
+input,
+textarea,
+button,
+select {
+    font: inherit;
+    color: inherit;
+    margin: 0;
+}
+
+label {
+    font-weight: bold;
+}
+
+/* BLOCKQUOTES */
+blockquote {
+    @extend p;
+    font-style: italic;
+    color: var(--color-text-dim);
+}
+
+figure {
+    background-color: var(--color-text-bg);
+    border-radius: var(--radius-medium);
+    padding: var(--spacing-2x);
+    overflow: hidden;
+}
+
+figcaption {
+    font-family: var(--font-family-serif);
+    font-style: italic;
+    color: var(--color-text-dim);
+    padding: var(--spacing-1x) 0;
+    margin-top: var(--spacing-2x);
+}
+
+/* ADDRESS */
+address {
+    line-height: normal;
+}
+
+/* LINKS */
+
+a:any-link {
+    color: var(--color-link);
+
+    &:hover {
+        color: var(--color-link-hover);
+    }
+}
+
+a:local-link {
+    color: var(--color-text);
+    &:hover {
+        color: var(--color-text-dim);
+    }
+}

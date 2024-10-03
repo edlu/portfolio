@@ -1,0 +1,7 @@
+:root {
+    --gap-block: var(--spacing-2x);
+}
+
+.block:not(:last-child) {
+    margin-bottom: var(--gap-block);
+}

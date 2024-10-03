@@ -1,0 +1,8 @@
+.tooltip {
+    font-size: $text-2xs;
+    padding: $spacing-half $spacing-1x;
+    background-color: $black-80;
+    border-radius: 0.5em;
+    color: $text-color-inverse;
+    position: absolute;
+}

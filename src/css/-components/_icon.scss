@@ -1,0 +1,21 @@
+.icon {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 1em;
+    height: 1em;
+}
+
+.icon-text {
+    align-items: flex-start;
+    color: inherit;
+    display: inline-flex;
+    flex-wrap: wrap;
+    line-height: 1em;
+    vertical-align: top;
+
+    .icon {
+        flex-grow: 0;
+        flex-shrink: 0;
+    }
+}
