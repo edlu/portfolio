@@ -1,5 +1,4 @@
 <script setup>
-import { ref } from 'vue';
 import { IconBrandLinkedin } from '@tabler/icons-vue';
 import { IconBrandDribbble } from '@tabler/icons-vue';
 </script>
@@ -29,7 +28,6 @@ header {
 nav {
   width: 100%;
   max-width: 1440px;
-  //background-color: blue;
   display: flex;
   gap: 1em;
   align-items: center;
