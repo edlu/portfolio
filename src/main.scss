@@ -1,51 +1,8 @@
 @import 'css/styles.scss';
 
-@import '@radix-ui/colors/red.css';
-@import '@radix-ui/colors/mauve.css';
-@import '@radix-ui/colors/mauve-alpha.css';
-
-:root {
-  --main-bg: var(--mauve-1);
-  --header-bg: var(--mauve-alpha-1);
-  --text-primary: var(--mauve-12);
-  --text-secondary: var(--mauve-11);
-  --text-link: var(--red-11);
-  --text-link-hover: var(--red-12);
-
-  // font-family: Montserrat, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  // line-height: 1.4;
-  // font-weight: 400;
-
-  // color-scheme: light dark;
-  // color: var(--text-primary);
-  // background-color: var(--main-bg);
-
-  // font-synthesis: none;
-  // text-rendering: optimizeLegibility;
-  // -webkit-font-smoothing: antialiased;
-  // -moz-osx-font-smoothing: grayscale;
-}
-
-a,
-a:visited {
-  color: var(--text-link);
-  text-decoration: inherit;
-}
-a:hover {
-  color: var(--text-link-hover);
-}
-
-body {
-  margin: 0;
-  padding: 0;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: center;
-}
-
 #app {
   margin: 0;
   padding: 0;
   width: 100%;
+  font-weight: 200;
 }

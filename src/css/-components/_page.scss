@@ -2,23 +2,24 @@
     --base-type-size: 1rem; // 16px = 1rem. This defines the base size for EVERYTHING
     --font-family-main: var(--font-family-sans-serif);
 
+
     /* BACKGROUND AND BORDER COLOR */
     // Light theme
-    --color-page-background: var(--mauve-2);
-    --color-separator: var(--color-black-05);
+    --color-page-bg: var(--color-white-95);
+    --color-separator: var(--color-black-10);
 
     // Dark theme
-    --color-page-background-dark: var(--color-gray-05);
-    --color-separator-dark: var(--color-white-05);
+    --color-page-bg-dark: var(--color-black-95);
+    --color-separator-dark: var(--color-white-10);
 
     /* TEXT COLOR */
     // Light theme
-    --color-text: var(--color-black-60);
-    --color-text-hover: var(--color-black-80);
-    --color-text-dim: var(--color-black-50);
-    --color-text-hint: var(--color-black-30);
+    --color-text: var(--color-black-90);
+    --color-text-hover: var(--color-black-100);
+    --color-text-dim: var(--color-black-80);
+    --color-text-hint: var(--color-black-60);
 
-    --color-heading: var(--color-black-70);
+    --color-heading: var(--color-black-90);
     --color-text-bg: var(--color-black-03);
 
     --color-text-info: var(--color-info);
@@ -31,12 +32,12 @@
     --color-link-local-hover: var(--color-black-20);
 
     // Dark theme
-    --color-text-dark: var(--color-white-80);
-    --color-text-hover-dark: var(--color-white-90);
-    --color-text-dim-dark: var(--color-white-60);
-    --color-text-hint-dark: var(--color-white-40);
+    --color-text-dark: var(--color-white-90);
+    --color-text-hover-dark: var(--color-white-100);
+    --color-text-dim-dark: var(--color-white-80);
+    --color-text-hint-dark: var(--color-white-70);
 
-    --color-heading-dark: var(--color-white-100);
+    --color-heading-dark: var(--color-white-90);
     --color-text-bg-dark: var(--color-white-05);
 
     --color-link-dark: var(--color-brand-primary);

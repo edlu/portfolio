@@ -4,10 +4,10 @@ import { IconBrandDribbble } from '@tabler/icons-vue';
 </script>
 
 <template>
-  <header>
+  <header class="position-sticky--top z-index-global padding-x-2x-tablet-portrait">
     <nav>
-      <a href="#/home"
-        ><img src="/src/assets/superindustrial_logo.svg" height="20" />
+      <a href="#/home">
+        <img src="/src/assets/superindustrial_logo.svg" height="20" />
       </a>
       <div class="links">
         <IconBrandDribbble :size="24" stroke-width="1" />
@@ -19,9 +19,11 @@ import { IconBrandDribbble } from '@tabler/icons-vue';
 
 <style scoped>
 header {
-  background-color: var(--header-bg);
-  padding: 1rem 4rem;
-  backdrop-filter: blur(16px);
+  display: flex;
+  place-content: center;
+  background-color: rgba(255, 255, 255, 0.85);
+  padding: var(--spacing-1x) var(--spacing-1x);
+  backdrop-filter: blur(12px);
   width: 100%;
 }
 
@@ -36,6 +38,6 @@ nav {
 
 .links {
   display: flex;
-  gap: 0.5em;
+  gap: var(--spacing-1x);
 }
 </style>
