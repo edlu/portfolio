@@ -1,6 +1,7 @@
 <script setup>
 import Header from './components/Header.vue';
 import Project from './components/Project.vue';
+import Footer from './components/Footer.vue';
 </script>
 
 <template>
@@ -12,7 +13,7 @@ import Project from './components/Project.vue';
       year="2011-2015"
       role="Lead UX, UI, Design Manager"
       platform="iOS, Android"
-      imgUrl="/src/assets/fantasy_hero.png"
+      imgUrl="/src/assets/heroes/hero-fantasy.png"
       imgAltText="Yahoo! Fantasy Mobile"
     />
     <Project
@@ -21,7 +22,7 @@ import Project from './components/Project.vue';
       year="2015"
       role="Lead UX, UI"
       platform="watchOS"
-      imgUrl="/src/assets/fantasy_watch_hero.png"
+      imgUrl="/src/assets/heroes/hero-fantasy-watch.png"
       imgAltText="Yahoo! Fantasy Apple Watch"
     />
     <Project
@@ -34,12 +35,12 @@ import Project from './components/Project.vue';
       imgAltText="Yahoo! Daily Fantasy Mobile"
     />
     <Project
-      title="Nliven Ticketing"
+      title="TixTrack Ticketing"
       company="TixTrack"
       year="2015"
       role="Lead UX, UI, Design Manager"
       platform="Responsive Web"
-      imgUrl="/src/assets/nliven_hero.png"
+      imgUrl="/src/assets/heroes/hero-nliven.png"
       imgAltText="Nliven Ticketing"
     />
     <Project
@@ -52,6 +53,7 @@ import Project from './components/Project.vue';
       imgAltText="RippleMatch Recruiting"
     />
   </main>
+  <Footer />
 </template>
 
 <style scoped>

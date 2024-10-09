@@ -47,7 +47,7 @@
 
     // Inverse (colors used on theme-independent darker solid color blocks)
     --color-text-inverse: var(--color-white-100);
-    --color-text-inverse-dim: var(--color-white-80);
+    --color-text-inverse-dim: var(--color-white-60);
 
     /* BRAND + SEMANTIC UI COLORS */
     // Light Theme
@@ -81,20 +81,6 @@
     --color-danger-dark: rgb(238, 31, 27);
     --color-warning-dark: rgb(255, 153, 0);
     --color-success-dark: hsl(98 88% 50%);
-
-    /* SEAT AVAILABILITY COLORS */
-
-    .color-availability-high {
-        color: var(--color-success);
-    }
-
-    .color-availability-medium {
-        color: var(--color-warning);
-    }
-
-    .color-availability-low {
-        color: var(--color-danger);
-    }
 
     /* GRADIENTS */
     --color-gradient-brand: 90deg, var(--color-brand-primary) 0%,
@@ -157,10 +143,9 @@ body {
         @include dark-theme;
     }
 
-    /* Should we respect build device theme preference as an nliven option? */
-    /* Here's how we'd do it */
+    /* Support Dark Theme */
 
-    // @media (prefers-color-scheme: dark) {
-    //     @include dark-theme;
-    // }
+    @media (prefers-color-scheme: dark) {
+        @include dark-theme;
+    }
 }

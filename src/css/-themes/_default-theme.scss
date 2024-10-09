@@ -33,6 +33,11 @@
 @import url("https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@200..900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital@1&display=swap");
 
+@import '@radix-ui/colors/mauve.css';
+@import '@radix-ui/colors/mauve-dark.css';
+@import '@radix-ui/colors/white-alpha.css';
+@import '@radix-ui/colors/black-alpha.css';
+
 :root {
     /* FONTS */
     // Import fonts above outside of :root first
@@ -107,9 +112,7 @@
 
     /* RADIX COLORS */
 
-    @import '@radix-ui/colors/mauve.css';
-    @import '@radix-ui/colors/mauve-dark.css';
-
+    // Custom Scale Colors
     --red-1: #fffcfc;
     --red-2: #fff8f6;
     --red-3: #fdece9;
@@ -175,5 +178,5 @@
       }
 
     /**** PAGE ****/
-    --color-page-bg: var(--mauve-2);
+    --color-page-bg: var(--mauve-3);
 }

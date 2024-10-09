@@ -9,6 +9,10 @@ Files inside this folder can contain abstract settings, helpers or functions. Th
 @import url("https://fonts.googleapis.com/css2?family=Bitter:ital@1&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@200..900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital@1&display=swap");
+@import '@radix-ui/colors/mauve.css';
+@import '@radix-ui/colors/mauve-dark.css';
+@import '@radix-ui/colors/white-alpha.css';
+@import '@radix-ui/colors/black-alpha.css';
 /* RESPONSIVE MIXINS */
 /* https://itnext.io/writing-media-queries-with-sass-mixins-3ea591ea3ea4 */
 /**
@@ -7917,7 +7921,7 @@ Each angular component should pull in their respective styles so we avoid loadin
   --color-link-local-dark: var(--color-white-70);
   --color-link-local-hover-dark: var(--color-white-90);
   --color-text-inverse: var(--color-white-100);
-  --color-text-inverse-dim: var(--color-white-80);
+  --color-text-inverse-dim: var(--color-white-60);
   /* BRAND + SEMANTIC UI COLORS */
   --color-brand-primary: hsl(197 100% 50%);
   --color-brand-primary-darken: hsl(197 100% 40%);
@@ -7941,22 +7945,9 @@ Each angular component should pull in their respective styles so we avoid loadin
   --color-danger-dark: rgb(238, 31, 27);
   --color-warning-dark: rgb(255, 153, 0);
   --color-success-dark: hsl(98 88% 50%);
-  /* SEAT AVAILABILITY COLORS */
   /* GRADIENTS */
   --color-gradient-brand: 90deg, var(--color-brand-primary) 0%,
       var(--color-brand-secondary) 100%;
-}
-
-:root .color-availability-high {
-  color: var(--color-success);
-}
-
-:root .color-availability-medium {
-  color: var(--color-warning);
-}
-
-:root .color-availability-low {
-  color: var(--color-danger);
 }
 
 /* GLOBAL FONT DEFINITIONS */
@@ -7974,8 +7965,7 @@ body {
   font-family: var(--font-family-main);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  /* Should we respect build device theme preference as an nliven option? */
-  /* Here's how we'd do it */
+  /* Support Dark Theme */
 }
 
 body h1,
@@ -8010,6 +8000,28 @@ body.theme--dark {
   --color-separator: var(--color-separator-dark);
 }
 
+@media (prefers-color-scheme: dark) {
+  body {
+    color-scheme: light dark;
+    --color-text: var(--color-text-dark);
+    --color-text-dim: var(--color-text-dim-dark);
+    --color-text-hint: var(--color-text-hint-dark);
+    --color-text-bg: var(--color-text-bg-dark);
+    --color-heading: var(--color-heading-dark);
+    --color-link: var(--color-link-dark);
+    --color-link-hover: var(--color-link-hover-dark);
+    --color-link-local: var(--color-link-local-dark);
+    --color-link-local-hover: var(--color-link-local-hover-dark);
+    --color-info: var(--color-info-dark);
+    --color-danger: var(--color-danger-dark);
+    --color-warning: var(--color-warning-dark);
+    --color-success: var(--color-success-dark);
+    --color-page-bg: var(--color-page-bg-dark);
+    --color-panel-bg: var(--color-panel-bg-dark);
+    --color-panel-border: var(--color-panel-border-dark);
+    --color-separator: var(--color-separator-dark);
+  }
+}
 /*
 This file is used to contain all component imports.
 Files inside this folder can contain specific element styles and layout. 
@@ -8811,8 +8823,6 @@ Files inside this folder can contain specific element styles and layout.
   --font-family-main: var(--font-family-sans-serif);
   /* SIZE */
   /* RADIX COLORS */
-  @import '@radix-ui/colors/mauve.css';
-  @import '@radix-ui/colors/mauve-dark.css';
   --red-1: #fffcfc;
   --red-2: #fff8f6;
   --red-3: #fdece9;
@@ -8842,7 +8852,7 @@ Files inside this folder can contain specific element styles and layout.
   --red-indicator: #a10000;
   --red-track: #a10000;
   /**** PAGE ****/
-  --color-page-bg: var(--mauve-2);
+  --color-page-bg: var(--mauve-3);
 }
 
 :root .dark, :root .dark-theme {
