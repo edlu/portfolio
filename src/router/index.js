@@ -1,24 +1,19 @@
-import Vue from 'vue';
-import Router from 'vue-router';
-import Home from '@/components/Home.vue';
-import ProjectDetail from '../components/ProjectDetail.vue';
+import { createRouter, createWebHistory } from 'vue-router';
 
-Vue.use(Router);
+import Home from '@/views/Home.vue';
 
-export default new Router({
-  routes: [
-    {
-      path: '/',
-      name: 'Home',
-      component: Home
-    },
-    {
-      path: '/project',
-      name: 'ProjectDetail',
-      component: ProjectDetail,
-      props: route => ({
-        title: route.query.title,
-      })
-    }
+const routes = [
+    {path: '/', name: 'Home', component: Home},
+    {path: '/project/yahoo-fantasy-mobile', name: 'FantasyApp', component: ()=>import('@/views/projects/FantasyApp.vue')},
+    {path: '/project/yahoo-fantasy-apple-watch', name: 'FantasyWatch', component: ()=>import('@/views/projects/FantasyWatch.vue')},
+    {path: '/project/yahoo-daily-fantasy', name: 'DailyFantasy', component: ()=>import('@/views/projects/DailyFantasy.vue')},
+    {path: '/project/tixtrack', name: 'TixTrack', component: ()=>import('@/views/projects/TixTrack.vue')},
+    {path: '/project/ripplematch', name: 'RippleMatch', component: ()=>import('@/views/projects/RippleMatch.vue')},
   ]
+
+const router = createRouter({
+  history: createWebHistory(),
+  routes
 });
+
+export default router;

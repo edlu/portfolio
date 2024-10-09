@@ -62,7 +62,7 @@ defineProps({
     filter: saturate(1);
   }
 
-  &:hover, &:focus, &:active {
+  &:hover, &:focus {
     cursor: pointer;
     background-size: 102%;
     outline: none;

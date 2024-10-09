@@ -6,13 +6,13 @@ import { IconBrandDribbble } from '@tabler/icons-vue';
 <template>
   <header class="position-sticky--top z-index-global padding-x-2x-tablet-portrait">
     <nav>
-      <a href="#/home">
+      <router-link to="/">
         <picture>
           <source srcset="/src/assets/superindustrial-logo-inv.svg" media="(prefers-color-scheme: dark)" />
           <img src="/src/assets/superindustrial-logo.svg" alt="Superindustrial Logo" height="20"/>
         </picture>
-      </a>
-      <div class="group gap-eighth">
+      </router-link>
+      <div class="group gap-eighth size-s">
         <a href="https://dribbble.com/superindustrial" target="_blank" class="button button--borderless"><IconBrandDribbble :size="24" stroke-width="1" /></a>
         <a href="https://www.linkedin.com/in/goedlu" target="_blank" class="button button--borderless"><IconBrandLinkedin :size="24" stroke-width="1" /></a>
       </div>
@@ -39,7 +39,7 @@ nav {
   max-width: 1440px;
   display: flex;
   gap: 1em;
-  padding: 0 var(--spacing-half);
+  padding: 0 var(--spacing-1x);
   align-items: center;
   justify-content: space-between;
 }
