@@ -8,3 +8,5 @@ Each angular component should pull in their respective styles so we avoid loadin
 */
 
 @use '_page.scss';
+@use '_icon.scss';
+@use '_button.scss';

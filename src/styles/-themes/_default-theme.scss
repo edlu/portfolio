@@ -179,4 +179,37 @@
 
     /**** PAGE ****/
     --color-page-bg: var(--mauve-3);
+
+    /* BRAND + SEMANTIC UI COLORS */
+    // Light Theme
+    --color-brand-primary: var(--red-11);
+    // manually define darker/lighter variants until new CSS color module 5 features work in all browsers
+    --color-brand-primary-darken: var(--red-12);
+    --color-brand-primary-lighten: var(--red-10);
+
+    --color-brand-secondary: hsl(151 90% 70%);
+    --color-brand-secondary-darken: hsl(151 90% 60%);
+    --color-brand-secondary-lighten: hsl(151 90% 90%);
+
+    --color-info: hsl(197 100% 50%);
+    --color-info-darken: hsl(197 100% 40%);
+    --color-info-lighten: hsl(197 100% 70%);
+
+    --color-danger: hsl(1 94% 53%);
+    --color-danger-darken: hsl(1 84% 43%);
+    --color-danger-lighten: hsl(1 84% 73%);
+
+    --color-warning: hsl(30 95% 56%);
+    --color-warning-darken: hsl(30 89% 46%);
+    --color-warning-lighten: hsl(30 89% 76%);
+
+    --color-success: hsl(98 88% 41%);
+    --color-success-darken: hsl(98 88% 31%);
+    --color-success-lighten: hsl(98 88% 61%);
+
+    // Dark Theme
+    --color-info-dark: hsl(197 100% 50%);
+    --color-danger-dark: rgb(238, 31, 27);
+    --color-warning-dark: rgb(255, 153, 0);
+    --color-success-dark: hsl(98 88% 50%);
 }

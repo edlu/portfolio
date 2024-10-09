@@ -7,15 +7,17 @@ import Footer from './components/Footer.vue';
 <template>
   <Header />
   <main>
-    <Project
-      title="Yahoo! Fantasy Mobile"
-      company="Yahoo!"
-      year="2011-2015"
-      role="Lead UX, UI, Design Manager"
-      platform="iOS, Android"
-      imgUrl="/src/assets/heroes/hero-fantasy.png"
-      imgAltText="Yahoo! Fantasy Mobile"
-    />
+    <router-link :to="{name: 'ProjectDetail'}">
+      <Project
+        title="Yahoo! Fantasy Mobile"
+        company="Yahoo!"
+        year="2011-2015"
+        role="Lead UX, UI, Design Manager"
+        platform="iOS, Android"
+        imgUrl="/src/assets/heroes/hero-fantasy.png"
+        imgAltText="Yahoo! Fantasy Mobile"
+      />
+    </router-link>
     <Project
       title="Yahoo! Fantasy Apple Watch"
       company="Yahoo!"

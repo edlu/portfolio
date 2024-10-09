@@ -12,9 +12,9 @@ import { IconBrandDribbble } from '@tabler/icons-vue';
           <img src="/src/assets/superindustrial-logo.svg" alt="Superindustrial Logo" height="20"/>
         </picture>
       </a>
-      <div class="links">
-        <IconBrandDribbble :size="24" stroke-width="1" />
-        <IconBrandLinkedin :size="24" stroke-width="1" />
+      <div class="group gap-eighth">
+        <a href="https://dribbble.com/superindustrial" target="_blank" class="button button--borderless"><IconBrandDribbble :size="24" stroke-width="1" /></a>
+        <a href="https://www.linkedin.com/in/goedlu" target="_blank" class="button button--borderless"><IconBrandLinkedin :size="24" stroke-width="1" /></a>
       </div>
     </nav>
   </header>
@@ -25,7 +25,7 @@ header {
   display: flex;
   place-content: center;
   background-color: var(--white-a9);
-  padding: var(--spacing-1x) var(--spacing-2x);
+  padding: var(--spacing-half) var(--spacing-2x);
   backdrop-filter: blur(12px);
   width: 100%;
 
