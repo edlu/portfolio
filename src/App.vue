@@ -13,7 +13,7 @@ import Footer from './components/Footer.vue';
   <Footer />
 </template>
 
-<style scoped>
+<style lang="css">
 
 main {
   display: flex;
