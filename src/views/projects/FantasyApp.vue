@@ -1,5 +1,5 @@
 <template>
-    <main class="fantasy-app padding-4x padding-1x-mobile gap-4x">
+    <main class="padding-1x padding-4x-tablet-portrait gap-2x gap-4x-tablet-portrait">
 
         <section>
             <h1>Yahoo! Fantasy Mobile App</h1>
@@ -96,7 +96,7 @@
         </section>
 
         <section class="margin-bottom-2x">
-            <figure>
+            <figure class="padding-1x padding-2x-tablet-portrait">
                 <img src="/src/assets/fantasy/fsga-award.png" width="100%" class="border-radius-large">
                 <figcaption>FSGA Best Commissioner Product award 2013</figcaption>
             </figure>

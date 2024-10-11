@@ -1,5 +1,5 @@
 <template>
-  <main class="fantasy-watch padding-4x padding-1x-mobile gap-4x">
+  <main class="padding-1x padding-4x-tablet-portrait gap-2x gap-4x-tablet-portrait">
 
         <section>
             <h1>Yahoo! Fantasy Apple Watch</h1>
@@ -7,7 +7,7 @@
             <p class="size-l">In the months leading up to the debut of the first Apple Watch, we were given the opportunity to have Yahoo! Fantasy be a part of the inaugural suite of apps.  Much of the product was still under wraps and the device was not accessible to the general public.</p>
 
             <div class="project-summary">
-                <div class="project-summary__data padding-2x padding-1x-mobile">
+                <div class="project-summary__data padding-1x padding-2x-tablet-portrait">
                     <table>
                         <tbody>
                             <tr>
@@ -30,7 +30,7 @@
                     </table>
                 </div>
 
-                <div class="project-summary__achievements padding-2x padding-1x-mobile">
+                <div class="project-summary__achievements padding-1x padding-2x-tablet-portrait">
                     <ul>
                         <li>First fantasy sports app on Apple Watch</li>
                         <li>Really fun!</li>
@@ -52,7 +52,7 @@
         
         <div class="content-with-image">
             <p>When we first set out to design the Fantasy Sports Apple Watch app, there were only preliminary Human Interface Guidelines available to guide us. While we were confident that the Apple Watch would stand out in the smart watch market, it wasn't entirely clear at the time <em>how</em> it would distinguish itself.</p>
-            <figure class="image-container">
+            <figure class="image-container padding-1x padding-2x-tablet-portrait margin-bottom-1x margin-bottom-2x-tablet-portrait">
                 <img src="/src/assets/watch/apple-watch-hig.png" alt="Apple Watch Human Interface Guidelines" class="img-responsive">
                 <figcaption class="size-xs">Apple Watch Human Interface Guidelines</figcaption>
             </figure>
@@ -73,11 +73,11 @@
         <h3>Data Visualization</h3>
         
         <div class="content-with-image">
-            <figure class="image-container">
+            <figure class="image-container padding-1x padding-2x-tablet-portrait margin-bottom-1x margin-bottom-2x-tablet-portrait">
                 <img src="/src/assets/watch/matchup-sketch-area.png" alt="Sketch of micro-matchup data visualization for Apple Watch" class="img-responsive margin-bottom-1x">
-                <!-- <img src="/src/assets/watch/matchup-sketch-bars.png" alt="Sketch of micro-matchup data visualization for Apple Watch" class="img-responsive"> -->
                 <figcaption class="size-xs">Early sketches exploring data visualization options for the micro-matchup feature</figcaption>
             </figure>
+
             <p>Given the Apple Watch's limited screen size, it was clear that a traditional matchup UI wouldn't fit. We needed a way to convey meaningful data at a glance, so I turned to data visualization as the key to delivering a snapshot of complex information efficiently.</p>
             
             <p>I began by exploring various options through sketches and concepts, focusing on how to distill key Fantasy Sports data into digestible, visual elements that could be quickly understood in seconds. This exploration eventually led to the creation of the app's "micro-matchup" feature—a streamlined, visual representation of player performance that allowed users to get a clear, concise overview of their team's status without overwhelming them with details.</p>
@@ -94,14 +94,14 @@
         <h3>Screenshots</h3>
 
         <div class="screenshots-container">
-            <figure class="screenshot-figure">
+            <figure class="screenshot-figure padding-1x padding-2x-tablet-portrait margin-bottom-1x margin-bottom-2x-tablet-portrait">
                 <div class="screenshot-images">
                     <img src="/src/assets/watch/ui-app-h2h.png" alt="Apple Watch app head-to-head view">
                     <img src="/src/assets/watch/ui-glance-h2h.png" alt="Apple Watch glance head-to-head view">
                 </div>
                 <figcaption class="size-xs">Head-to-head watch app views</figcaption>
             </figure>
-            <figure class="screenshot-figure">
+            <figure class="screenshot-figure padding-1x padding-2x-tablet-portrait margin-bottom-1x margin-bottom-2x-tablet-portrait">
                 <div class="screenshot-images">
                     <img src="/src/assets/watch/ui-app-roto.png" alt="Apple Watch app head-to-head view">
                     <img src="/src/assets/watch/ui-glance-roto.png" alt="Apple Watch glance head-to-head view">
@@ -121,8 +121,8 @@
 
             <p>The simulator was integrated with the phone's Photos app which allowed us to select my mockup exports.  The image would appear inside of a device mockup frame and we'd hold the phone over our wrist. It looked a bit silly, but it worked quite well, giving us a feel for the physical scale of the designs. With limited information and resources, we improvised and did what was necessary to ensure the app would provide a great user experience.</p>
             
-            <figure class="display-inline-block">
-                <img src="/src/assets/watch/mockup-previewer.png" alt="Apple Watch Human Interface Guidelines" class="img-responsive" style="max-width: 300px;">
+            <figure class="image-container padding-1x padding-2x-tablet-portrait margin-bottom-1x margin-bottom-2x-tablet-portrait">
+                <img src="/src/assets/watch/mockup-previewer.png" alt="Apple Watch Human Interface Guidelines" class="img-responsive">
                 <figcaption class="size-xs">Apple Watch screen size simulator app</figcaption>
             </figure>       
         </div>
@@ -183,12 +183,16 @@
     overflow: hidden; /* Clearfix */
   }
 
+  .content-wrapper {
+    display: flex;
+    align-items: flex-start;
+  }
+
   .image-container {
-    float: right;
-    margin-left: var(--spacing-2x);
-    margin-bottom: var(--spacing-1x);
-    max-width: 50%;
-    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    max-width: 100%;
   }
 
   .image-container img {
@@ -202,10 +206,9 @@
 
   @media (max-width: 768px) {
     .image-container {
-      float: none;
-      margin-left: 0;
+      display: flex;
+      justify-content: center;
       max-width: 100%;
-      margin-bottom: var(--spacing-2x);
     }
   }
 
@@ -225,7 +228,7 @@
     display: flex;
     gap: var(--spacing-1x);
     margin-bottom: var(--spacing-1x);
-    align-items: flex-start; /* This aligns the images to the top */
+    align-items: flex-start;
   }
 
   .screenshot-images img {
