@@ -32,7 +32,7 @@ import whiteboarding3ps from '@/assets/img/tixtrack/whiteboarding-3ps.png'
         <p class="size-l">I played a key role at TixTrack in developing Nliven—a platform featuring a high-conversion purchasing front-end and comprehensive event management tools for ticket sales, inventory, order management, and analytics. Starting with a small team in a shared Santa Monica office, we grew TixTrack into a global company with hundreds of employees. I led the transformation of ticketing experiences, from mobile purchasing to full box office management, and created Chrysalis, a unified design system that ensured speed, consistency, and a cohesive brand across our product and marketing.</p>
 
         <div class="project-summary card">
-            <div class="project-summary__data padding-1x padding-2x-tablet-portrait">
+            <div class="project-summary__data padding-2x padding-1x-mobile">
                 <table>
                     <tbody>
                         <tr>
@@ -55,7 +55,7 @@ import whiteboarding3ps from '@/assets/img/tixtrack/whiteboarding-3ps.png'
                 </table>
             </div>
 
-            <div class="project-summary__achievements padding-1x padding-2x-tablet-portrait">
+            <div class="project-summary__achievements padding-2x padding-1x-mobile">
                 <ul>
                     <li>12% increase in mobile ticket conversion rate</li>
                     <li>Deloitte Fast 500 Technology Companies 2017, 2018</li>
@@ -236,7 +236,7 @@ import whiteboarding3ps from '@/assets/img/tixtrack/whiteboarding-3ps.png'
   }
 
   .project-summary__data {
-    padding: var(--spacing-2x);
+    /* padding: var(--spacing-2x); */
     border-right: 1px solid var(--color-card-border);
     
     @media (max-width: 576px) {
@@ -260,7 +260,7 @@ import whiteboarding3ps from '@/assets/img/tixtrack/whiteboarding-3ps.png'
   }
 
   .project-summary__achievements {
-      padding: var(--spacing-2x);
+      /* padding: var(--spacing-2x); */
       flex-grow: 1;
 
       ul {

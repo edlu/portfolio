@@ -21,7 +21,7 @@ import meetupSpeaking from '@/assets/img/watch/meetup-speaking.png'
             <p class="size-l">In the months leading up to the debut of the first Apple Watch, we were given the opportunity to have Yahoo! Fantasy be a part of the inaugural suite of apps.  Much of the product was still under wraps and the device was not accessible to the general public.</p>
 
             <div class="project-summary card">
-                <div class="project-summary__data padding-1x padding-2x-tablet-portrait">
+                <div class="project-summary__data padding-2x padding-1x-mobile">
                     <table>
                         <tbody>
                             <tr>
@@ -44,7 +44,7 @@ import meetupSpeaking from '@/assets/img/watch/meetup-speaking.png'
                     </table>
                 </div>
 
-                <div class="project-summary__achievements padding-1x padding-2x-tablet-portrait">
+                <div class="project-summary__achievements padding-2x padding-1x-mobile">
                     <ul>
                         <li>First fantasy sports app on Apple Watch</li>
                         <li>Pretended to be a secret agent</li>

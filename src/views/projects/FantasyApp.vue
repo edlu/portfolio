@@ -117,10 +117,10 @@ import fsgaAward from '@/assets/img/fantasy/fsga-award.png'
 
             <h3>2015</h3>
             <div class="group gap-2x flex-wrap flex-justify-center flex-align-center margin-bottom-4x">
-                <img :src="splash2015" alt="2015 Yahoo! Fantasy splash page" class="img-responsive" loading="lazy" data-aos="fade-up" data-aos-delay="100">
-                <img :src="team2015" alt="2015 Yahoo! Fantasy team page" class="img-responsive" loading="lazy" data-aos="fade-up" data-aos-delay="200">
-                <img :src="matchup2015" alt="2015 Yahoo! Fantasy matchup page" class="img-responsive" loading="lazy" data-aos="fade-up" data-aos-delay="300">
-                <img :src="player2015" alt="2015 Yahoo! Fantasy player page" class="img-responsive" loading="lazy" data-aos="fade-up" data-aos-delay="400">
+                <img :src="splash2015" alt="2015 Yahoo! Fantasy splash page" class="img-responsive" data-aos="fade-up" data-aos-delay="100">
+                <img :src="team2015" alt="2015 Yahoo! Fantasy team page" class="img-responsive" data-aos="fade-up" data-aos-delay="200">
+                <img :src="matchup2015" alt="2015 Yahoo! Fantasy matchup page" class="img-responsive" data-aos="fade-up" data-aos-delay="300">
+                <img :src="player2015" alt="2015 Yahoo! Fantasy player page" class="img-responsive" data-aos="fade-up" data-aos-delay="400">
             </div>
         </section>
 

@@ -28,6 +28,7 @@ header {
   place-content: center;
   background-color: var(--white-a9);
   backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
   width: 100%;
 
   @media (prefers-color-scheme: dark) {

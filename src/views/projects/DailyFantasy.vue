@@ -18,7 +18,7 @@ import dailyPlayer from '@/assets/img/daily/Daily-Player.png'
             <p class="size-l">In 2015, we made a strategic bet to get ahead of the market shift from season-long Fantasy Sports to Daily Fantasy. Our goal was to create a monetized daily lineup challenge that would drive heavy engagement while capitalizing on our existing user base. We would focus on social features from the start with the hope that the product would experience explosive growth.</p>
 
             <div class="project-summary card">
-                <div class="project-summary__data padding-1x padding-2x-tablet-portrait">
+                <div class="project-summary__data padding-2x padding-1x-mobile">
                     <table>
                         <tbody>
                             <tr>
@@ -41,7 +41,7 @@ import dailyPlayer from '@/assets/img/daily/Daily-Player.png'
                     </table>
                 </div>
 
-                <div class="project-summary__achievements padding-1x padding-2x-tablet-portrait">
+                <div class="project-summary__achievements padding-2x padding-1x-mobile">
                     <ul>
                         <li>Inaugural Yahoo! Daily Fantasy product</li>
                         <li>First major mobile-led product that would inform the web product</li>

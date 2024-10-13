@@ -167,6 +167,7 @@ html {
 body {
     color: var(--color-text);
     background-color: var(--color-page-bg);
+    font-style: normal;
     font-family: sans-serif; /* Fallback for older browsers */
     font-family: var(--font-family-main);
     -webkit-font-smoothing: antialiased;
