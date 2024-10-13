@@ -4,7 +4,7 @@ import superindustrialMark from '@/assets/superindustrial-mark.svg'
 
 <template>
   <div class="footer padding-x-2x-tablet-portrait size-xs">
-    <img :src="superindustrialMark" alt="Superindustrial Mark" height="32"/>
+    <img :src="superindustrialMark" alt="Superindustrial Mark" height="32" loading="lazy"/>
     <span>&copy;2024 Superindustrial</span>
   </div>
 </template>

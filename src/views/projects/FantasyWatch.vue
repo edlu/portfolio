@@ -56,9 +56,9 @@ import meetupSpeaking from '@/assets/img/watch/meetup-speaking.png'
 
         <section class="margin-bottom-2x">
             <div class="group gap-2x flex-wrap flex-justify-center flex-align-center margin-bottom-4x">
-                <img :src="watchGlanceShort" alt="Yahoo! Fantasy Sports Apple Watch app short view" class="img-responsive">
-                <img :src="watchGlanceLong" alt="Yahoo! Fantasy Sports Apple Watch app long view" class="img-responsive">
-                <img :src="watchApp" alt="Yahoo! Fantasy Sports Apple Watch app app view" class="img-responsive">
+                <img :src="watchGlanceShort" alt="Yahoo! Fantasy Sports Apple Watch app short view" class="img-responsive" loading="lazy" data-aos="fade-up" data-aos-delay="100">
+                <img :src="watchGlanceLong" alt="Yahoo! Fantasy Sports Apple Watch app long view" class="img-responsive" loading="lazy" data-aos="fade-up" data-aos-delay="200">
+                <img :src="watchApp" alt="Yahoo! Fantasy Sports Apple Watch app app view" class="img-responsive" loading="lazy" data-aos="fade-up" data-aos-delay="300">
             </div>
         </section>
 
@@ -68,7 +68,7 @@ import meetupSpeaking from '@/assets/img/watch/meetup-speaking.png'
         <div class="content-with-image">
             <p>When we first set out to design the Fantasy Sports Apple Watch app, there were only preliminary Human Interface Guidelines available to guide us. While we were confident that the Apple Watch would stand out in the smart watch market, it wasn't entirely clear at the time <em>how</em> it would distinguish itself.</p>
             <figure class="image-container right padding-1x padding-2x-tablet-portrait margin-bottom-1x margin-bottom-2x-tablet-portrait">
-                <img :src="appleWatchHig" alt="Apple Watch Human Interface Guidelines" class="img-responsive">
+                <img :src="appleWatchHig" alt="Apple Watch Human Interface Guidelines" class="img-responsive" loading="lazy" data-aos="fade-up">
                 <figcaption class="size-xs">Apple Watch Human Interface Guidelines</figcaption>
             </figure>
             <p>Apple emphasized that while mobile phone interactions distilled desktop tasks into minutes, the Watch would reduce interactions even further—into mere seconds. This challenge required us to rethink how users would engage with Fantasy Sports on an entirely new platform.</p>
@@ -89,7 +89,7 @@ import meetupSpeaking from '@/assets/img/watch/meetup-speaking.png'
         
         <div class="content-with-image">
             <figure class="image-container right padding-1x padding-2x-tablet-portrait margin-bottom-1x margin-bottom-2x-tablet-portrait">
-                <img :src="matchupSketchBars" alt="Sketch of micro-matchup data visualization for Apple Watch" class="img-responsive margin-bottom-1x">
+                <img :src="matchupSketchBars" alt="Sketch of micro-matchup data visualization for Apple Watch" class="img-responsive margin-bottom-1x" loading="lazy" data-aos="fade-up">
                 <figcaption class="size-xs">Early sketches exploring data visualization options for the micro-matchup feature</figcaption>
             </figure>
 
@@ -111,15 +111,15 @@ import meetupSpeaking from '@/assets/img/watch/meetup-speaking.png'
         <div class="screenshots-container">
             <figure class="screenshot-figure padding-1x padding-2x-tablet-portrait margin-bottom-1x margin-bottom-2x-tablet-portrait">
                 <div class="screenshot-images">
-                    <img :src="uiAppH2h" alt="Apple Watch app head-to-head view">
-                    <img :src="uiGlanceH2h" alt="Apple Watch glance head-to-head view">
+                    <img :src="uiAppH2h" alt="Apple Watch app head-to-head view" loading="lazy" data-aos="fade-up" data-aos-delay="100">
+                    <img :src="uiGlanceH2h" alt="Apple Watch glance head-to-head view" loading="lazy" data-aos="fade-up" data-aos-delay="200">
                 </div>
                 <figcaption class="size-xs">Head-to-head watch app views</figcaption>
             </figure>
             <figure class="screenshot-figure padding-1x padding-2x-tablet-portrait margin-bottom-1x margin-bottom-2x-tablet-portrait">
                 <div class="screenshot-images">
-                    <img :src="uiAppRoto" alt="Apple Watch app head-to-head view">
-                    <img :src="uiGlanceRoto" alt="Apple Watch glance head-to-head view">
+                    <img :src="uiAppRoto" alt="Apple Watch app head-to-head view" loading="lazy" data-aos="fade-up" data-aos-delay="300">
+                    <img :src="uiGlanceRoto" alt="Apple Watch glance head-to-head view" loading="lazy" data-aos="fade-up" data-aos-delay="400">
                 </div>
                 <figcaption class="size-xs">Roto watch app views</figcaption>
             </figure>
@@ -130,7 +130,7 @@ import meetupSpeaking from '@/assets/img/watch/meetup-speaking.png'
         
         <div class="content-with-image">
             <figure class="image-container right padding-1x padding-2x-tablet-portrait margin-bottom-1x margin-bottom-2x-tablet-portrait">
-                <img :src="mockupPreviewer" alt="Apple Watch Human Interface Guidelines" class="img-responsive">
+                <img :src="mockupPreviewer" alt="Apple Watch Human Interface Guidelines" class="img-responsive" loading="lazy" data-aos="fade-up">
                 <figcaption class="size-xs">Apple Watch screen size simulator app</figcaption>
             </figure> 
             <p>This was my first time designing anything on a screen so small.  The elements in my artboards felt ridiculously <em>large</em> as I designed them on my laptop screen.  I needed a way to get a sense of how these would look on the actual device at an average distance based on human physiology.</p>
@@ -144,7 +144,7 @@ import meetupSpeaking from '@/assets/img/watch/meetup-speaking.png'
     </section>
     <section class="margin-bottom-2x">
         <figure class="padding-1x padding-2x-tablet-portrait">
-            <img :src="meetupSpeaking" alt="Presenting at meetup" width="100%" class="border-radius-large">
+            <img :src="meetupSpeaking" alt="Presenting at meetup" width="100%" class="border-radius-large" loading="lazy" data-aos="fade-up">
             <figcaption class="size-xs">Presenting our Fantasy Apple Watch work at a meetup in San Francisco</figcaption>
         </figure>
     </section>

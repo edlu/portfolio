@@ -159,7 +159,7 @@ import whiteboarding3ps from '@/assets/img/tixtrack/whiteboarding-3ps.png'
         
         <div class="content-with-image">
             <figure class="image-container right padding-1x padding-2x-tablet-portrait margin-bottom-1x margin-bottom-2x-tablet-portrait">
-                <img :src="boxOfficeInterview" alt="Box office interviews" class="img-responsive">
+                <img :src="boxOfficeInterview" alt="Box office interviews" class="img-responsive" loading="lazy">
                 <figcaption class="size-xs">Interviewing box office staff</figcaption>
             </figure> 
             
@@ -172,7 +172,7 @@ import whiteboarding3ps from '@/assets/img/tixtrack/whiteboarding-3ps.png'
             <p>Because we didn't want to build a “faster horse” based solely on legacy practices, it was important to include the team in the process.  We led Design Studios that included engineers and stakeholders to generate ideas and build a shared understanding of our users so that each individual could have the agency to make decisions with the customer in mind.</p>
 
             <figure class="image-container left padding-1x padding-2x-tablet-portrait margin-bottom-1x margin-bottom-2x-tablet-portrait">
-                <img :src="smeCollaboration" alt="Collaborating with internal Subject Matter Experts">
+                <img :src="smeCollaboration" alt="Collaborating with internal Subject Matter Experts" loading="lazy">
                 <figcaption class="size-xs">Collaborating with internal Subject Matter Experts</figcaption>
             </figure> 
 
@@ -182,11 +182,11 @@ import whiteboarding3ps from '@/assets/img/tixtrack/whiteboarding-3ps.png'
             
             <div class="screenshots-container">
             <figure class="screenshot-figure padding-1x padding-2x-tablet-portrait">
-              <img :src="designStudio" alt="Design Studio session with the team">
+              <img :src="designStudio" alt="Design Studio session with the team" loading="lazy">
               <figcaption class="size-xs">Design Studio session with the team</figcaption>
             </figure>
             <figure class="screenshot-figure padding-1x padding-2x-tablet-portrait">
-              <img :src="empathyMapping" alt="Empathy mapping for box office users">
+              <img :src="empathyMapping" alt="Empathy mapping for box office users" loading="lazy">
               <figcaption class="size-xs">Empathy mapping for box office users</figcaption>
                 </figure>
             </div>
@@ -196,20 +196,20 @@ import whiteboarding3ps from '@/assets/img/tixtrack/whiteboarding-3ps.png'
     <section>
       <h3>Branding</h3>
       <p>Being such a small company, part of my work there was to establish branding.  Our initial seat map design represented seating as small dots, a simple and intuitive choice that resonated with users. This design element quickly became a foundational motif for our brand, inspiring our logo and influencing our entire visual design language. By building our identity around this motif, we established a consistent look and feel that extended from the product interface to all marketing materials, reinforcing our brand's commitment to simplicity and clarity. This unified design approach helped strengthen brand recognition and provided a seamless experience across all touchpoints.</p>
-      <img :src="tixtrackBrand" alt="TixTrack branding style board" class="img-full-width">
-      <img :src="tixtrackBusinessCards" alt="TixTrack business cards" class="img-full-width">
+      <img :src="tixtrackBrand" alt="TixTrack branding style board" class="img-full-width" loading="lazy">
+      <img :src="tixtrackBusinessCards" alt="TixTrack business cards" class="img-full-width" loading="lazy">
     </section>
     <section>
       <h3>Marketing</h3>
       <p>Establishing branding helped to guide the visual style of our marketing.  I designed and managed the build of the corporate website that helped to generate sales leads and talent.  The brand was also expressed in physical spaces like our Santa Monica office and at trade shows, which we attended several times a year.</p>
-      <img :src="tixtrackCorporateSite" alt="TixTrack corporate website" class="img-full-width">
+      <img :src="tixtrackCorporateSite" alt="TixTrack corporate website" class="img-full-width" loading="lazy">
       <div class="columns width-100 margin-bottom-2x">
-        <img :src="tixtrackOfficeSign" alt="TixTrack office sign" class="column--12-mobile column--1-6" width="100%">
-        <img :src="tixtrackOfficeSignDetail" alt="TixTrack office sign detail" class="column--12-mobile column--7-end" width="100%">
+        <img :src="tixtrackOfficeSign" alt="TixTrack office sign" class="column--12-mobile column--1-6" width="100%" loading="lazy">
+        <img :src="tixtrackOfficeSignDetail" alt="TixTrack office sign detail" class="column--12-mobile column--7-end" width="100%" loading="lazy">
        </div>
        <div class="columns width-100">
-        <img :src="tixtrackTradeShowBooth1" alt="TixTrack trade show booth" class="column--12-mobile column--1-6" width="100%">
-        <img :src="tixtrackTradeShowBooth2" alt="TixTrack trade show booth detail" class="column--12-mobile column--7-end" width="100%">
+        <img :src="tixtrackTradeShowBooth1" alt="TixTrack trade show booth" class="column--12-mobile column--1-6" width="100%" loading="lazy">
+        <img :src="tixtrackTradeShowBooth2" alt="TixTrack trade show booth detail" class="column--12-mobile column--7-end" width="100%" loading="lazy">
        </div>
     </section>
     <section>
@@ -217,9 +217,9 @@ import whiteboarding3ps from '@/assets/img/tixtrack/whiteboarding-3ps.png'
       <p>To drive speed, consistency, and scalability, I designed and coded a complete design system and CSS framework called Chrysalis. This system included a robust Figma design library with pixel-perfect CSS component counterparts, allowing our design and development teams to collaborate seamlessly. Every component in Figma was precisely matched in code, ensuring a smooth transition when designs were built.</p>
 
       <p>The CSS framework was both theme-able and extensible, featuring a comprehensive set of utility classes. This empowered developers to quickly assemble layouts and elements using semantic HTML, with minimal need for custom CSS. Chrysalis enabled our team to create polished, consistent user interfaces across our product, achieving new levels of efficiency and adaptability.</p>
-      <img :src="chrysalisDesignSystem" alt="Chrysalis design system" class="img-full-width margin-bottom-2x">
+      <img :src="chrysalisDesignSystem" alt="Chrysalis design system" class="img-full-width margin-bottom-2x" loading="lazy">
       <p>I built this reference site to provide developers with documentation on usage and best practices.</p>
-      <img :src="chrysalisDocumentationWebsite" alt="Chrysalis documentation website" class="img-full-width">
+      <img :src="chrysalisDocumentationWebsite" alt="Chrysalis documentation website" class="img-full-width" loading="lazy">
     </section>
   </main>
 </template>

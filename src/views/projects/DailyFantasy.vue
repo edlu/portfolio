@@ -52,7 +52,7 @@ import dailyPlayer from '@/assets/img/daily/Daily-Player.png'
         </section>
 
         <section>
-            <img :src="dailyDeviceHero" alt="Yahoo! Daily Fantasy devices" class="img-full-width">
+            <img :src="dailyDeviceHero" alt="Yahoo! Daily Fantasy devices" class="img-full-width" loading="lazy" data-aos="fade-up">
         </section>
 
     <section class="margin-bottom-2x">
@@ -61,7 +61,7 @@ import dailyPlayer from '@/assets/img/daily/Daily-Player.png'
 
         <p>We began by mapping out how the funnel would look for incoming users and how we could facilitate social media sharing.</p>
         
-        <img :src="dailyHighLevelFlow" alt="Yahoo! Daily Fantasy social sketch" class="img-full-width">
+        <img :src="dailyHighLevelFlow" alt="Yahoo! Daily Fantasy social sketch" class="img-full-width" loading="lazy" data-aos="fade-up">
     </section>
     <section class="margin-bottom-2x">
         <h3>Screens</h3>
@@ -71,12 +71,12 @@ import dailyPlayer from '@/assets/img/daily/Daily-Player.png'
         <p>The UI was net new and required many iterations to arrive at a final solution.  This ranged from rethinking nav structure entirely to small copy adjustments to improve understanding.</p>
 
         <div class="group gap-2x flex-wrap flex-justify-center flex-align-center margin-bottom-4x">
-                <img :src="dailySplash" alt="Yahoo! Daily Fantasy Splash Page" class="img-responsive">
-                <img :src="dailyMyContests" alt="Yahoo! Daily Fantasy My Contests Page" class="img-responsive">
-                <img :src="dailyContests" alt="Yahoo! Daily Fantasy Contests Page" class="img-responsive">
-                <img :src="dailyLineup" alt="Yahoo! Daily Fantasy Lineup Page" class="img-responsive">
-                <img :src="dailyH2HContest" alt="Yahoo! Daily Fantasy Head to Head Contest Result Page" class="img-responsive">
-                <img :src="dailyPlayer" alt="Yahoo! Daily Fantasy Player Page" class="img-responsive">
+                <img :src="dailySplash" alt="Yahoo! Daily Fantasy Splash Page" class="img-responsive" loading="lazy" data-aos="fade-up" data-aos-delay="100">
+                <img :src="dailyMyContests" alt="Yahoo! Daily Fantasy My Contests Page" class="img-responsive" loading="lazy" data-aos="fade-up" data-aos-delay="200">
+                <img :src="dailyContests" alt="Yahoo! Daily Fantasy Contests Page" class="img-responsive" loading="lazy" data-aos="fade-up" data-aos-delay="300">
+                <img :src="dailyLineup" alt="Yahoo! Daily Fantasy Lineup Page" class="img-responsive" loading="lazy" data-aos="fade-up" data-aos-delay="400">
+                <img :src="dailyH2HContest" alt="Yahoo! Daily Fantasy Head to Head Contest Result Page" class="img-responsive" loading="lazy" data-aos="fade-up" data-aos-delay="500">
+                <img :src="dailyPlayer" alt="Yahoo! Daily Fantasy Player Page" class="img-responsive" loading="lazy" data-aos="fade-up" data-aos-delay="600">
         </div>
     </section>
    
