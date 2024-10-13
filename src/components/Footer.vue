@@ -1,10 +1,10 @@
 <script setup>
-
+import superindustrialMark from '@/assets/superindustrial-mark.svg'
 </script>
 
 <template>
   <div class="footer padding-x-2x-tablet-portrait size-xs">
-    <img src="/src/assets/superindustrial-mark.svg" alt="Superindustrial Mark" height="32"/>
+    <img :src="superindustrialMark" alt="Superindustrial Mark" height="32"/>
     <span>&copy;2024 Superindustrial</span>
   </div>
 </template>
@@ -25,5 +25,4 @@
     background-color: var(--black-a9);
   }
 }
-
 </style>

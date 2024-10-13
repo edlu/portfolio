@@ -1,6 +1,8 @@
 <script setup>
 import { IconBrandLinkedin } from '@tabler/icons-vue';
 import { IconBrandDribbble } from '@tabler/icons-vue';
+import superindustrialLogo from '@/assets/superindustrial-logo.svg'
+import superindustrialLogoInv from '@/assets/superindustrial-logo-inv.svg'
 </script>
 
 <template>
@@ -8,8 +10,8 @@ import { IconBrandDribbble } from '@tabler/icons-vue';
     <nav class="padding-x-1x">
       <router-link to="/">
         <picture>
-          <source srcset="/src/assets/superindustrial-logo-inv.svg" media="(prefers-color-scheme: dark)" />
-          <img src="/src/assets/superindustrial-logo.svg" alt="Superindustrial Logo" height="20"/>
+          <source :srcset="superindustrialLogoInv" media="(prefers-color-scheme: dark)" />
+          <img :src="superindustrialLogo" alt="Superindustrial Logo" height="20"/>
         </picture>
       </router-link>
       <div class="group gap-eighth size-s">

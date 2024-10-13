@@ -41,7 +41,7 @@
     --color-text-bg-dark: var(--color-white-05);
 
     --color-link-dark: var(--color-brand-primary);
-    --color-link-hover-dark: var(--color-brand-primary-darken);
+    --color-link-hover-dark: var(--color-brand-primary-lighten);
     --color-link-local-dark: var(--color-white-70);
     --color-link-local-hover-dark: var(--color-white-90);
 
@@ -88,7 +88,7 @@
 }
 
 @mixin dark-theme {
-    color-scheme: light dark; // activates user agent's dark theme
+    color-scheme: dark; // activates user agent's dark theme
     --color-text: var(--color-text-dark);
     --color-text-dim: var(--color-text-dim-dark);
     --color-text-hint: var(--color-text-hint-dark);
@@ -110,6 +110,50 @@
     --color-panel-bg: var(--color-panel-bg-dark);
     --color-panel-border: var(--color-panel-border-dark);
     --color-separator: var(--color-separator-dark);
+
+    --color-card-background: var(--color-card-background-dark);
+    --color-card-header-background: var(--color-card-header-background-dark);
+    --color-card-footer-background: var(--color-card-footer-background-dark);
+    --color-card-border: var(--color-card-border-dark);
+
+    --color-button-bg-dark: var(--color-gray-40);
+    --color-button-border-dark: var(--color-gray-30);
+    --color-button-text-dark: var(--color-white-100);
+
+    /* PRIMARY BUTTON COLORS */
+
+    // Dark Theme
+    --color-button-primary-bg-dark: var(--color-brand-primary);
+    --color-button-primary-border-dark: var(--color-brand-primary);
+    --color-button-primary-text-dark: var(--color-white-100);
+
+    /* SECONDARY BUTTON COLORS */
+
+    // Dark Theme
+    --color-button-secondary-bg-dark: var(--color-gray-50);
+    --color-button-secondary-border-dark: var(--color-gray-50);
+    --color-button-secondary-text-dark: var(--color-white-100);
+
+    /* DESTRUCTIVE BUTTON COLORS */
+
+    // Dark Theme
+    --color-button-destructive-bg-dark: var(--color-danger);
+    --color-button-destructive-border-dark: var(--color-danger);
+    --color-button-destructive-text-dark: var(--color-white-100);
+
+    /* BORDERLESS BUTTON COLORS */
+
+    // Dark Theme
+    --color-button-borderless-bg-dark: transparent;
+    --color-button-borderless-bg-hover-dark: var(--color-white-05);
+    --color-button-borderless-border-dark: transparent;
+    --color-button-borderless-text-dark: var(--color-text-dark);
+
+    /* GHOST BUTTON COLORS */
+
+    // Dark Theme
+    --color-button-ghost-border-dark: var(--color-white-20);
+    --color-button-ghost-text-dark: var(--color-text-dark);
 }
 
 /* GLOBAL FONT DEFINITIONS */

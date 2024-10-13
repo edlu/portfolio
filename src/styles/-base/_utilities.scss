@@ -59,7 +59,7 @@ $spacing-breakpoints: (
                 @each $breakpoint in $spacing-breakpoints {
                     &-#{$breakpoint} {
                         @include for-size(#{$breakpoint}) {
-                            #{$property}: $value !important;
+                            #{$property}-#{$direction}: $value !important;
                         }
                     }
                 }

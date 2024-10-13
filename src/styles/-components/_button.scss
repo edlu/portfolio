@@ -158,7 +158,6 @@
         &:hover:not(:disabled, .disabled),
         &:focus:not(:disabled, .disabled) {
             border-color: var(--color-button-ghost-border-hover);
-            // background: var(--color-button-ghost-bg-hover);
         }
     }
 
@@ -348,7 +347,7 @@
     }
 }
 
-.theme--dark {
+.theme--dark, .dark {
     --color-button-bg: var(--color-button-bg-dark);
     --color-button-border: var(--color-button-border-dark);
     --color-button-text: var(--color-button-text-dark);
@@ -365,9 +364,7 @@
 
     /* BORDERLESS BUTTON COLORS */
     --color-button-borderless-bg: var(--color-button-borderless-bg-dark);
-    --color-button-borderless-bg-hover: var(
-        --color-button-borderless-bg-hover-dark
-    );
+    --color-button-borderless-bg-hover: var(--color-button-borderless-bg-hover-dark);
 
     --color-button-borderless-text: var(--color-button-borderless-text-dark);
 
@@ -380,16 +377,10 @@
 
     /* BUTTON SET */
     --color-buttonset-button-bg: var(--color-buttonset-button-bg-dark);
-    --color-buttonset-button-bg-hover: var(
-        --color-buttonset-button-bg-hover-dark
-    );
-    --color-buttonset-button-bg-active: var(
-        --color-buttonset-button-bg-active-dark
-    );
+    --color-buttonset-button-bg-hover: var(--color-buttonset-button-bg-hover-dark);
+    --color-buttonset-button-bg-active: var(--color-buttonset-button-bg-active-dark);
 
     --color-buttonset-button-border: var(--color-buttonset-button-border-dark);
 
-    --color-buttonset-button-text-active: var(
-        --color-buttonset-button-text-active-dark
-    );
+    --color-buttonset-button-text-active: var(--color-buttonset-button-text-active-dark);
 }

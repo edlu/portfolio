@@ -179,7 +179,7 @@
 
     /**** PAGE ****/
     --color-page-bg: var(--mauve-3);
-
+    
     /* BRAND + SEMANTIC UI COLORS */
     // Light Theme
     --color-brand-primary: var(--red-11);
@@ -187,9 +187,9 @@
     --color-brand-primary-darken: var(--red-12);
     --color-brand-primary-lighten: var(--red-10);
 
-    --color-brand-secondary: hsl(151 90% 70%);
-    --color-brand-secondary-darken: hsl(151 90% 60%);
-    --color-brand-secondary-lighten: hsl(151 90% 90%);
+    --color-brand-secondary: var(--mauve-11);
+    --color-brand-secondary-darken: var(--mauve-12);
+    --color-brand-secondary-lighten: var(--mauve-10);
 
     --color-info: hsl(197 100% 50%);
     --color-info-darken: hsl(197 100% 40%);
