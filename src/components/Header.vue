@@ -1,8 +1,8 @@
 <script setup>
 import { IconBrandLinkedin } from '@tabler/icons-vue';
 import { IconBrandDribbble } from '@tabler/icons-vue';
-import superindustrialLogo from '@/assets/superindustrial-logo.svg'
-import superindustrialLogoInv from '@/assets/superindustrial-logo-inv.svg'
+import superindustrialLogo from '/src/assets/img/superindustrial-logo.svg'
+import superindustrialLogoInv from '/src/assets/img/superindustrial-logo-inv.svg'
 </script>
 
 <template>
