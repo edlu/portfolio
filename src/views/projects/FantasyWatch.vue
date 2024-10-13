@@ -163,27 +163,28 @@ import meetupSpeaking from '@/assets/img/watch/meetup-speaking.png'
   }
 
   .project-summary__data {
-      padding: var(--spacing-2x);
-      border-right: 1px solid var(--color-card-border);
-      
-      @media (max-width: 576px) {
-          border-right: none;
-          border-bottom: 1px solid var(--color-card-border);
-      }
+        padding: var(--spacing-2x);
+        border-right: 1px solid var(--color-card-border);
+        
+        @media (max-width: 576px) {
+            border-right: none;
+            border-bottom: 1px solid var(--color-card-border);
+        }
 
-      td {
-          padding-right: var(--spacing-1x);
-          padding-bottom: var(--spacing-half)
-      }
+        td {
+            line-height: 1.2em;
+            padding-right: var(--spacing-1x);
+            padding-bottom: var(--spacing-half)
+        }
 
-      .label {
-          color: var(--color-text-dim);
-      }
+        .label {
+            color: var(--color-text-dim);
+        }
 
-      .value {
-          font-weight: 500;
-      }
-  }
+        .value {
+            font-weight: 500;
+        }
+    }
 
   .project-summary__achievements {
       padding: var(--spacing-2x);
@@ -191,6 +192,10 @@ import meetupSpeaking from '@/assets/img/watch/meetup-speaking.png'
 
       ul {
           margin: 0;
+      }
+
+      li {
+          line-height: 1.2em;
       }
   }
 

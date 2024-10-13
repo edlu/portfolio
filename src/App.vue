@@ -25,7 +25,7 @@ main {
 }
 
 .fade-enter-active, .fade-leave-active {
-    transition: opacity var(--transition-slow);
+    transition: opacity var(--transition-fast);
 }
 
 .fade-enter-from, .fade-leave-to {

@@ -1,15 +1,37 @@
 <script setup>
+import { ref } from 'vue';
+import { useRouter } from 'vue-router';
 import Project from '@/components/Project.vue';
-import heroFantasy from '@/assets/img/heroes/hero-fantasy.png'
-import heroFantasyWatch from '@/assets/img/heroes/hero-fantasy-watch.png'
-import heroDailyFantasy from '@/assets/img/heroes/hero-daily-fantasy.png'
-import heroNliven from '@/assets/img/heroes/hero-nliven.png'
-import heroRipplematch from '@/assets/img/heroes/hero-ripplematch.png'
+import heroFantasy from '@/assets/img/heroes/hero-fantasy.png';
+import heroFantasyWatch from '@/assets/img/heroes/hero-fantasy-watch.png';
+import heroDailyFantasy from '@/assets/img/heroes/hero-daily-fantasy.png';
+import heroNliven from '@/assets/img/heroes/hero-nliven.png';
+import heroRipplematch from '@/assets/img/heroes/hero-ripplematch.png';
+
+const router = useRouter();
+const isTransitioning = ref(false);
+
+const beforeEnter = () => {
+  isTransitioning.value = true;
+};
+
+const afterLeave = () => {
+  isTransitioning.value = false;
+};
+
+const handleClick = (event, path) => {
+  if (isTransitioning.value) {
+    event.preventDefault();
+    return;
+  }
+  isTransitioning.value = true;
+  router.push(path);
+};
 </script>
 
 <template>
     <main class="home">
-        <router-link to="project/yahoo-fantasy-mobile" :disabled="isNavigating" replace>
+        <a href="#" @click.prevent="handleClick($event, 'project/yahoo-fantasy-mobile')" :class="{ 'disabled': isTransitioning }">
             <project
             title="Yahoo! Fantasy App"
             company="Yahoo!"
@@ -19,8 +41,8 @@ import heroRipplematch from '@/assets/img/heroes/hero-ripplematch.png'
             :imgUrl="heroFantasy"
             imgAltText="Yahoo! Fantasy Mobile App"
             />
-        </router-link>
-        <router-link to="project/yahoo-fantasy-apple-watch" replace>
+        </a>
+        <a href="#" @click.prevent="handleClick($event, 'project/yahoo-fantasy-apple-watch')" :class="{ 'disabled': isTransitioning }">
             <project
             title="Yahoo! Fantasy Apple Watch"
             company="Yahoo!"
@@ -30,8 +52,8 @@ import heroRipplematch from '@/assets/img/heroes/hero-ripplematch.png'
             :imgUrl="heroFantasyWatch"
             imgAltText="Yahoo! Fantasy Apple Watch"
             />
-        </router-link>
-        <router-link to="project/yahoo-daily-fantasy" replace>
+        </a>
+        <a href="#" @click.prevent="handleClick($event, 'project/yahoo-daily-fantasy')" :class="{ 'disabled': isTransitioning }">
             <project
             title="Yahoo! Daily Fantasy Mobile"
             company="Yahoo!"
@@ -41,8 +63,8 @@ import heroRipplematch from '@/assets/img/heroes/hero-ripplematch.png'
             :imgUrl="heroDailyFantasy"
             imgAltText="Yahoo! Daily Fantasy Mobile"
             />
-        </router-link>
-        <router-link to="project/tixtrack" replace>
+        </a>
+        <a href="#" @click.prevent="handleClick($event, 'project/tixtrack')" :class="{ 'disabled': isTransitioning }">
             <project
             title="TixTrack Ticketing"
             company="TixTrack"
@@ -52,8 +74,8 @@ import heroRipplematch from '@/assets/img/heroes/hero-ripplematch.png'
             :imgUrl="heroNliven"
             imgAltText="Nliven Ticketing"
             />
-        </router-link>
-        <router-link to="project/ripplematch" replace>
+        </a>
+        <!-- <a href="#" @click.prevent="handleClick($event, 'project/ripplematch')" :class="{ 'disabled': isTransitioning }">
             <project
             title="RippleMatch Recruiting"
             company="RippleMatch"
@@ -63,7 +85,7 @@ import heroRipplematch from '@/assets/img/heroes/hero-ripplematch.png'
             :imgUrl="heroRipplematch"
             imgAltText="RippleMatch Recruiting"
             />
-        </router-link>
+        </a> -->
     </main>
 </template>
 
@@ -71,5 +93,9 @@ import heroRipplematch from '@/assets/img/heroes/hero-ripplematch.png'
 a {
     text-decoration: none;
     color: inherit;
+}
+.disabled {
+    pointer-events: none;
+    opacity: 0.5;
 }
 </style>

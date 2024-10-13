@@ -157,6 +157,7 @@ import fsgaAward from '@/assets/img/fantasy/fsga-award.png'
         }
 
         td {
+            line-height: 1.2em;
             padding-right: var(--spacing-1x);
             padding-bottom: var(--spacing-half)
         }
@@ -176,6 +177,10 @@ import fsgaAward from '@/assets/img/fantasy/fsga-award.png'
 
         ul {
             margin: 0;
+        }
+
+        li {
+            line-height: 1.2em;
         }
     }
 
