@@ -41,8 +41,8 @@
 :root {
     /* FONTS */
     // Import fonts above outside of :root first
-    --font-family-display: "Proxima Nova", sans-serif; /* defaults to --font-family-main if not defined */
-    --font-family-sans-serif: "Proxima Nova", sans-serif;
+    --font-family-display: "proxima-nova", sans-serif; /* defaults to --font-family-main if not defined */
+    --font-family-sans-serif: "proxima-nova", sans-serif;
     --font-family-serif: "Bitter", serif;
     --font-family-mono: "Source Code Pro", monospace;
 
