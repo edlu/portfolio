@@ -7961,8 +7961,10 @@ html {
 body {
   color: var(--color-text);
   background-color: var(--color-page-bg);
+  font-style: normal;
   font-family: sans-serif; /* Fallback for older browsers */
   font-family: var(--font-family-main);
+  font-smooth: always;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   /* Support Dark Theme */
@@ -7977,6 +7979,7 @@ body h6 {
   color: var(--color-heading);
   font-family: sans-serif; /* Fallback for old browsers */
   font-family: var(--font-family-display);
+  font-weight: 800;
 }
 
 body.theme--dark {

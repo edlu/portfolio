@@ -127,7 +127,7 @@ import fsgaAward from '@/assets/img/fantasy/fsga-award.png'
         <section class="margin-bottom-2x">
             <figure class="padding-1x padding-2x-tablet-portrait" data-aos="fade-up">
                 <img :src="fsgaAward" alt="FSGA Best Commissioner Product award 2013" width="100%" class="border-radius-large" loading="lazy">
-                <figcaption>FSGA Best Commissioner Product award 2013</figcaption>
+                <figcaption class="size-s">FSGA Best Commissioner Product award 2013</figcaption>
             </figure>
         </section>
 

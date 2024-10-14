@@ -254,11 +254,13 @@ import meetupSpeaking from '@/assets/img/watch/meetup-speaking.png'
   .image-container {
     display: flex;
     flex-direction: column;
-    width: clamp(250px, 70%, 370px); /* Adjust as needed */
-    margin-right: var(--spacing-2x); /* Space between image and text */
+    width: clamp(250px, 70%, 40%); /* Adjust as needed */
     shape-outside: margin-box;
-    margin-left: 0;
     max-width: 100%;
+
+    @media screen and (max-width: 576px) {
+      width: 100%;
+    }
   }
 
   .image-container img {

@@ -23,7 +23,7 @@
 // Display font (defaults to main font if not defined)
 
 // Sans serif font (same as display in default theme)
-// @import url("https://use.typekit.net/wti7eka.css");
+@import url("https://use.typekit.net/wti7eka.css");
 
 // Serif font
 @import url("https://fonts.googleapis.com/css2?family=Bitter:wght@100..900&display=swap");
@@ -41,8 +41,8 @@
 :root {
     /* FONTS */
     // Import fonts above outside of :root first
-    --font-family-display: "Proxima Nova", sans-serif; /* defaults to --font-family-main if not defined */
-    --font-family-sans-serif: "Proxima Nova", sans-serif;
+    --font-family-display: 'Proxima Nova', sans-serif; /* defaults to --font-family-main if not defined */
+    --font-family-sans-serif: 'Proxima Nova', sans-serif;
     --font-family-serif: "Bitter", serif;
     --font-family-mono: "Source Code Pro", monospace;
 
