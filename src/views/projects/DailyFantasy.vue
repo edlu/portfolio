@@ -133,6 +133,9 @@ import dailyPlayer from '@/assets/img/daily/Daily-Player.png'
 
   .img-responsive {
       width: clamp(200px, 100%, 340px);
+      box-shadow: 0px 261px 73px 0px rgba(0, 0, 0, 0.00), 0px 167px 67px 0px rgba(0, 0, 0, 0.01), 0px 94px 56px 0px rgba(0, 0, 0, 0.05), 0px 42px 42px 0px rgba(0, 0, 0, 0.08), 0px 10px 23px 0px rgba(0, 0, 0, 0.10);
+        border-radius: var(--spacing-3x);
+        border: 1px solid var(--mauve-5);
   }
 
   .img-full-width {
