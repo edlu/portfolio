@@ -73,9 +73,9 @@ import fsgaAward from '@/assets/img/fantasy/fsga-award.png'
         <section class="margin-bottom-2x">
             <h3>A Comeback Story</h3>
             
-            <p>In 2010, our team took on the task of bringing Yahoo's Fantasy Sports platform to iOS. The team was a group of misfits&mdash;engineers who had some mobile development exerience and no understand sports. Product and design with no experience with mobile technology and patterns. It was a train wreck.  Despite our best efforts, we couldn't deliver the full functionality users expected, launching with a limited feature set. Feedback was swift and brutal—our app was crushed in the iTunes App Store, earning a harsh one-star rating. One review even read, “I'm only giving one star because I can't give 0.”</p>
+            <p>In 2010, our team took on the task of bringing Yahoo's Fantasy Sports platform to iOS. Despite our best efforts, we couldn't deliver the full functionality users expected, launching with a limited feature set. Feedback was swift and brutal—our app was crushed in the iTunes App Store, earning a harsh one-star rating. One review even read, “I'm only giving one star because I can't give 0.”</p>
 
-            <p>We were devastated, embarrassed, and thoroughly humbled. I immediately sought redemption. We scrapped the 2010 version entirely and went back to the drawing board, rebuilding the app from the ground up.</p>
+            <p>We were devastated, embarrassed, and thoroughly humbled, we immediately sought redemption. We scrapped the 2010 version entirely and went back to the drawing board, rebuilding the app from the ground up.</p>
 
             <p>This time, we took what we had learned and dove deep into user feedback. We spent months iterating on designs, refining the UX, and pushing the boundaries of mobile development to handle the complexities of Fantasy Sports. We faced new challenges, technical hurdles, and pressure to deliver—but we pushed through.</p>
 

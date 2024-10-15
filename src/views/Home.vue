@@ -6,7 +6,7 @@ import heroFantasy from '@/assets/img/heroes/hero-fantasy.png';
 import heroFantasyWatch from '@/assets/img/heroes/hero-fantasy-watch.png';
 import heroDailyFantasy from '@/assets/img/heroes/hero-daily-fantasy.png';
 import heroNliven from '@/assets/img/heroes/hero-nliven.png';
-import heroRipplematch from '@/assets/img/heroes/hero-ripplematch.png';
+//import heroRipplematch from '@/assets/img/heroes/hero-ripplematch.png';
 
 const router = useRouter();
 const isTransitioning = ref(false);
