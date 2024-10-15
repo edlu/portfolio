@@ -31,26 +31,15 @@ const handleClick = (event, path) => {
 
 <template>
     <main class="home">
-        <a href="#" @click.prevent="handleClick($event, 'project/yahoo-fantasy-mobile')" :class="{ 'disabled': isTransitioning }">
+        <a href="#" @click.prevent="handleClick($event, 'project/tixtrack')" :class="{ 'disabled': isTransitioning }">
             <project
-            title="Yahoo! Fantasy App"
-            company="Yahoo!"
-            year="2011-2015"
-            role="Lead UX, UI, Design Manager"
-            platform="ios, Android"
-            :imgUrl="heroFantasy"
-            imgAltText="Yahoo! Fantasy Mobile App"
-            />
-        </a>
-        <a href="#" @click.prevent="handleClick($event, 'project/yahoo-fantasy-apple-watch')" :class="{ 'disabled': isTransitioning }">
-            <project
-            title="Yahoo! Fantasy Apple Watch"
-            company="Yahoo!"
+            title="TixTrack Ticketing"
+            company="TixTrack"
             year="2015"
-            role="Lead UX, UI"
-            platform="watchOS"
-            :imgUrl="heroFantasyWatch"
-            imgAltText="Yahoo! Fantasy Apple Watch"
+            role="Lead UX, UI, Design Manager"
+            platform="Responsive Web"
+            :imgUrl="heroNliven"
+            imgAltText="Nliven Ticketing"
             />
         </a>
         <a href="#" @click.prevent="handleClick($event, 'project/yahoo-daily-fantasy')" :class="{ 'disabled': isTransitioning }">
@@ -64,17 +53,30 @@ const handleClick = (event, path) => {
             imgAltText="Yahoo! Daily Fantasy Mobile"
             />
         </a>
-        <a href="#" @click.prevent="handleClick($event, 'project/tixtrack')" :class="{ 'disabled': isTransitioning }">
+        
+        <a href="#" @click.prevent="handleClick($event, 'project/yahoo-fantasy-apple-watch')" :class="{ 'disabled': isTransitioning }">
             <project
-            title="TixTrack Ticketing"
-            company="TixTrack"
+            title="Yahoo! Fantasy Apple Watch"
+            company="Yahoo!"
             year="2015"
-            role="Lead UX, UI, Design Manager"
-            platform="Responsive Web"
-            :imgUrl="heroNliven"
-            imgAltText="Nliven Ticketing"
+            role="Lead UX, UI"
+            platform="watchOS"
+            :imgUrl="heroFantasyWatch"
+            imgAltText="Yahoo! Fantasy Apple Watch"
             />
         </a>
+        <a href="#" @click.prevent="handleClick($event, 'project/yahoo-fantasy-mobile')" :class="{ 'disabled': isTransitioning }">
+            <project
+            title="Yahoo! Fantasy App"
+            company="Yahoo!"
+            year="2011-2015"
+            role="Lead UX, UI, Design Manager"
+            platform="ios, Android"
+            :imgUrl="heroFantasy"
+            imgAltText="Yahoo! Fantasy Mobile App"
+            />
+        </a>
+        
         <!-- <a href="#" @click.prevent="handleClick($event, 'project/ripplematch')" :class="{ 'disabled': isTransitioning }">
             <project
             title="RippleMatch Recruiting"
