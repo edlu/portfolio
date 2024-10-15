@@ -7964,6 +7964,7 @@ body {
   font-style: normal;
   font-family: sans-serif; /* Fallback for older browsers */
   font-family: var(--font-family-main);
+  font-weight: 400;
   font-smooth: always;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -9319,8 +9320,8 @@ Files inside this folder can contain specific element styles and layout.
 
 :root {
   /* FONTS */
-  --font-family-display: "Proxima Nova", sans-serif; /* defaults to --font-family-main if not defined */
-  --font-family-sans-serif: "Proxima Nova", sans-serif;
+  --font-family-display: "proxima-nova-1", sans-serif; /* defaults to --font-family-main if not defined */
+  --font-family-sans-serif: "proxima-nova-1", sans-serif;
   --font-family-serif: "Bitter", serif;
   --font-family-mono: "Source Code Pro", monospace;
   /*************************
