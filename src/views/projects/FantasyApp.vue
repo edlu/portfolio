@@ -85,34 +85,34 @@ import fsgaAward from '@/assets/img/fantasy/fsga-award.png'
 
             <h4>2011</h4>
             <div class="group gap-2x flex-wrap flex-justify-center flex-align-center margin-bottom-4x">
-                <img :src="splash2011" alt="2011 Yahoo! Fantasy splash page" class="img-responsive" loading="lazy" data-aos="fade-up" data-aos-delay="100">
-                <img :src="team2011" alt="2011 Yahoo! Fantasy team page" class="img-responsive" loading="lazy" data-aos="fade-up" data-aos-delay="200">
-                <img :src="matchup2011" alt="2011 Yahoo! Fantasy matchup page" class="img-responsive" loading="lazy" data-aos="fade-up" data-aos-delay="300">
-                <img :src="player2011" alt="2011 Yahoo! Fantasy player page" class="img-responsive" loading="lazy" data-aos="fade-up" data-aos-delay="400">
+                <img :src="splash2011" alt="2011 Yahoo! Fantasy splash page" class="img-responsive" data-aos="fade-up" data-aos-delay="100">
+                <img :src="team2011" alt="2011 Yahoo! Fantasy team page" class="img-responsive" data-aos="fade-up" data-aos-delay="200">
+                <img :src="matchup2011" alt="2011 Yahoo! Fantasy matchup page" class="img-responsive" data-aos="fade-up" data-aos-delay="300">
+                <img :src="player2011" alt="2011 Yahoo! Fantasy player page" class="img-responsive" data-aos="fade-up" data-aos-delay="400">
             </div>
 
             <h4>2012</h4>
             <div class="group gap-2x flex-wrap flex-justify-center flex-align-center margin-bottom-4x">
-                <img :src="splash2012" alt="2012 Yahoo! Fantasy splash page" class="img-responsive" loading="lazy" data-aos="fade-up" data-aos-delay="100">
-                <img :src="team2012" alt="2012 Yahoo! Fantasy team page" class="img-responsive" loading="lazy" data-aos="fade-up" data-aos-delay="200">
-                <img :src="matchup2012" alt="2012 Yahoo! Fantasy matchup page" class="img-responsive" loading="lazy" data-aos="fade-up" data-aos-delay="300">
-                <img :src="player2012" alt="2012 Yahoo! Fantasy player page" class="img-responsive" loading="lazy" data-aos="fade-up" data-aos-delay="400">
+                <img :src="splash2012" alt="2012 Yahoo! Fantasy splash page" class="img-responsive" data-aos="fade-up" data-aos-delay="100">
+                <img :src="team2012" alt="2012 Yahoo! Fantasy team page" class="img-responsive" data-aos="fade-up" data-aos-delay="200">
+                <img :src="matchup2012" alt="2012 Yahoo! Fantasy matchup page" class="img-responsive" data-aos="fade-up" data-aos-delay="300">
+                <img :src="player2012" alt="2012 Yahoo! Fantasy player page" class="img-responsive" data-aos="fade-up" data-aos-delay="400">
             </div>
             
             <h4>2013</h4>
             <div class="group gap-2x flex-wrap flex-justify-center flex-align-center margin-bottom-4x">
-                <img :src="splash2013" alt="2013 Yahoo! Fantasy splash page" class="img-responsive" loading="lazy" data-aos="fade-up" data-aos-delay="100">
-                <img :src="team2013" alt="2013 Yahoo! Fantasy team page" class="img-responsive" loading="lazy" data-aos="fade-up" data-aos-delay="200">
-                <img :src="matchup2013" alt="2013 Yahoo! Fantasy matchup page" class="img-responsive" loading="lazy" data-aos="fade-up" data-aos-delay="300">
-                <img :src="player2013" alt="2013 Yahoo! Fantasy player page" class="img-responsive" loading="lazy" data-aos="fade-up" data-aos-delay="400">
+                <img :src="splash2013" alt="2013 Yahoo! Fantasy splash page" class="img-responsive" data-aos="fade-up" data-aos-delay="100">
+                <img :src="team2013" alt="2013 Yahoo! Fantasy team page" class="img-responsive" data-aos="fade-up" data-aos-delay="200">
+                <img :src="matchup2013" alt="2013 Yahoo! Fantasy matchup page" class="img-responsive" data-aos="fade-up" data-aos-delay="300">
+                <img :src="player2013" alt="2013 Yahoo! Fantasy player page" class="img-responsive" data-aos="fade-up" data-aos-delay="400">
             </div>
 
             <h4>2014</h4>
             <div class="group gap-2x flex-wrap flex-justify-center flex-align-center margin-bottom-4x">
-                <img :src="splash2014" alt="2014 Yahoo! Fantasy splash page" class="img-responsive" loading="lazy" data-aos="fade-up" data-aos-delay="100">
-                <img :src="team2014" alt="2014 Yahoo! Fantasy team page" class="img-responsive" loading="lazy" data-aos="fade-up" data-aos-delay="200">
-                <img :src="matchup2014" alt="2014 Yahoo! Fantasy matchup page" class="img-responsive" loading="lazy" data-aos="fade-up" data-aos-delay="300">
-                <img :src="player2014" alt="2014 Yahoo! Fantasy player page" class="img-responsive" loading="lazy" data-aos="fade-up" data-aos-delay="400">
+                <img :src="splash2014" alt="2014 Yahoo! Fantasy splash page" class="img-responsive" data-aos="fade-up" data-aos-delay="100">
+                <img :src="team2014" alt="2014 Yahoo! Fantasy team page" class="img-responsive" data-aos="fade-up" data-aos-delay="200">
+                <img :src="matchup2014" alt="2014 Yahoo! Fantasy matchup page" class="img-responsive" data-aos="fade-up" data-aos-delay="300">
+                <img :src="player2014" alt="2014 Yahoo! Fantasy player page" class="img-responsive" data-aos="fade-up" data-aos-delay="400">
             </div>
 
             <h3>2015</h3>
