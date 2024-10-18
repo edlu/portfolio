@@ -75,3 +75,5 @@ jobs:
           echo "Deployment failed"
           git status
           git log -n 5
+          echo "Contents of dist directory:"
+          ls -R dist || echo "dist directory not found"
