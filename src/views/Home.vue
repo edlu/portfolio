@@ -45,7 +45,7 @@ import whiteboarding3ps from '@/assets/img/tixtrack/whiteboarding-3ps.png'
 import watchGlanceShort from '@/assets/img/watch/watch-glance-short.png'
 import watchGlanceLong from '@/assets/img/watch/watch-glance-long.png'
 import watchApp from '@/assets/img/watch/watch-app.png'
-import appleWatchHig from '@/assets/img/watch/apple-watch-hig.png'
+import appleWatchHig from '@/assets/img/watch/apple-watch-HIG.png'
 import matchupSketchBars from '@/assets/img/watch/matchup-sketch-bars.png'
 import uiAppH2h from '@/assets/img/watch/ui-app-h2h.png'
 import uiGlanceH2h from '@/assets/img/watch/ui-glance-h2h.png'
@@ -249,3 +249,4 @@ a {
     opacity: 0.5;
 }
 </style>
+
