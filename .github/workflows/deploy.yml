@@ -9,55 +9,26 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
-        continue-on-error: true
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: 20
-        continue-on-error: true
-
-      - name: Print Node.js and npm version
-        run: |
-          node --version
-          npm --version
-        continue-on-error: true
-
-      - name: List repository contents
-        run: ls -R
-        continue-on-error: true
-
-      - name: Print package.json contents
-        run: cat package.json
-        continue-on-error: true
-
-      - name: Print vite.config.js contents
-        run: cat vite.config.js
-        continue-on-error: true
 
       - name: Install dependencies
         run: npm ci
-        continue-on-error: true
 
       - name: Build
         run: npm run build
-        continue-on-error: true
-
-      - name: List dist folder
-        run: |
-          if [ -d "dist" ]; then
-            ls -R dist
-          else
-            echo "dist folder does not exist"
-          fi
-        continue-on-error: true
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./dist
-        continue-on-error: true
+          force_orphan: true
