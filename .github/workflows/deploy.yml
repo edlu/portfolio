@@ -20,42 +20,21 @@ jobs:
         with:
           node-version: 20
 
-      - name: Debug - Environment Info
-        run: |
-          echo "Node version: $(node -v)"
-          echo "NPM version: $(npm -v)"
-          echo "Current directory: $(pwd)"
-          echo "Directory contents:"
-          ls -la
-
       - name: Install dependencies
-        run: |
-          npm ci
-        continue-on-error: true
-      
+        run: npm ci
+
       - name: Debug - Project Structure
         run: |
           echo "Project structure:"
-          tree -L 3 || ls -R  # Use 'tree' if available, otherwise 'ls -R'
-          
+          tree -L 4 || ls -R
+
+      - name: Debug - vite.config.js contents
+        run: |
           echo "vite.config.js contents:"
           cat vite.config.js || echo "vite.config.js not found"
-          
-          echo "main.js contents:"
-          cat src/main.js || echo "main.js not found"
-          
-          echo "router file contents:"
-          cat src/router/index.js || cat src/router.js || echo "router file not found"
 
       - name: Build
-        run: |
-          npm run build
-        continue-on-error: true
-
-      - name: Debug - Build Output
-        run: |
-          echo "Build output:"
-          ls -R dist || echo "dist directory not found"
+        run: npm run build
 
       - name: Deploy to GitHub Pages
         run: |
@@ -63,36 +42,15 @@ jobs:
           git config --global user.email github-actions@github.com
           git checkout --orphan gh-pages
           git rm -rf .
-          mv dist/* . || echo "Failed to move dist contents"
+          mv dist/* .
+          echo "portfolio.yourname.com" > CNAME  # Replace with your actual domain if you have one
           rm -rf dist
           git add .
-          git commit -m "Deploy to GitHub Pages" || echo "Nothing to commit"
-          git push -f origin gh-pages || echo "Failed to push to gh-pages"
-        continue-on-error: true
-
-      - name: Debug - Final State
-        if: always()
-        run: |
-          echo "Final repository state:"
-          git status
-          echo "Recent git log:"
-          git log -n 5
-          echo "Current directory contents:"
-          ls -la
-          echo "npm logs:"
-          ls -la ~/.npm/_logs || echo "No npm logs found"
-
-      - name: Capture Logs
-        if: always()
-        run: |
-          mkdir -p logs
-          cp ~/.npm/_logs/* logs/ || echo "No npm logs to copy"
-          npm run build > logs/build.log 2>&1 || echo "Build command failed"
-          git status > logs/git-status.log 2>&1
-          git log -n 10 > logs/git-log.log 2>&1
+          git commit -m "Deploy to GitHub Pages"
+          git push -f origin gh-pages
 
       - name: Upload logs
-        if: always()
+        if: failure()
         uses: actions/upload-artifact@v4
         with:
           name: deployment-logs
