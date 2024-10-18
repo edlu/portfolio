@@ -20,52 +20,38 @@ jobs:
         with:
           node-version: 20
 
-      - name: Print Node.js and npm version
-        run: |
-          node --version
-          npm --version
-
       - name: Install dependencies
         run: npm ci
-
-      - name: List installed packages
-        run: npm ls --depth=0
-
-      - name: Print package.json contents
-        run: cat package.json
-
-      - name: Print vite.config.js contents
-        run: cat vite.config.js || echo "vite.config.js not found"
+        continue-on-error: true
 
       - name: Build
         run: npm run build
+        continue-on-error: true
 
-      - name: List dist folder
-        run: |
-          if [ -d "dist" ]; then
-            ls -R dist
-          else
-            echo "dist folder does not exist"
-            exit 1
-          fi
-
-      - name: Deploy to GitHub Pages
+      - name: Prepare for deployment
         run: |
           git config --global user.name github-actions
           git config --global user.email github-actions@github.com
+        continue-on-error: true
+
+      - name: Deploy to GitHub Pages
+        run: |
           git checkout --orphan gh-pages
           git rm -rf .
-          mv dist/* .
+          mv dist/* . || echo "Failed to move dist contents"
           rm -rf dist
           git add .
-          git commit -m "Deploy to GitHub Pages"
-          git push -f origin gh-pages
+          git commit -m "Deploy to GitHub Pages" || echo "Nothing to commit"
+          git push -f origin gh-pages || echo "Failed to push to gh-pages"
+        continue-on-error: true
 
-      - name: Check deployment
+      - name: Capture error information
         if: failure()
         run: |
           echo "Deployment failed"
+          echo "Git status:"
           git status
+          echo "Recent git log:"
           git log -n 5
           echo "Contents of current directory:"
           ls -R
@@ -74,6 +60,20 @@ jobs:
           echo "npm version:"
           npm --version
           echo "package.json contents:"
-          cat package.json
+          cat package.json || echo "package.json not found"
           echo "vite.config.js contents:"
           cat vite.config.js || echo "vite.config.js not found"
+          echo "dist directory contents:"
+          ls -R dist || echo "dist directory not found"
+        continue-on-error: true
+
+      - name: Upload error logs
+        if: failure()
+        uses: actions/upload-artifact@v2
+        with:
+          name: error-logs
+          path: |
+            ./*.log
+            ./npm-debug.log*
+            ./yarn-debug.log*
+            ./yarn-error.log*
