@@ -19,16 +19,36 @@ jobs:
           node-version: 20
 
       - name: Install dependencies
-        run: npm ci
+        run: |
+          npm ci
+          if [ $? -ne 0 ]; then
+            echo "npm ci failed"
+            exit 1
+          fi
 
       - name: List files
         run: ls -R
         
       - name: Build
-        run: npm run build
+        run: |
+          npm run build
+          if [ $? -ne 0 ]; then
+            echo "Build failed"
+            echo "Package.json contents:"
+            cat package.json
+            echo "Vite config contents:"
+            cat vite.config.js
+            exit 1
+          fi
 
       - name: List dist folder
-        run: ls -R dist
+        run: |
+          if [ -d "dist" ]; then
+            ls -R dist
+          else
+            echo "dist folder does not exist"
+            exit 1
+          fi
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
