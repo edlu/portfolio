@@ -33,6 +33,16 @@ jobs:
           echo "vite.config.js contents:"
           cat vite.config.js || echo "vite.config.js not found"
 
+      - name: Debug - Assets folder structure
+        run: |
+          echo "Assets folder structure:"
+          find src/assets -type f || echo "No files found in assets folder"
+
+      - name: Debug - Home.vue contents
+        run: |
+          echo "Home.vue contents:"
+          cat src/views/Home.vue || echo "Home.vue not found"
+
       - name: Build
         run: npm run build
 
