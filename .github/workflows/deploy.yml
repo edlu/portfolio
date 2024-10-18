@@ -14,41 +14,31 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
-        continue-on-error: true
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: 20
-        continue-on-error: true
 
       - name: Print Node.js and npm version
         run: |
           node --version
           npm --version
-        continue-on-error: true
 
-      - name: List repository contents
-        run: ls -la
-        continue-on-error: true
+      - name: Install dependencies
+        run: npm ci
+
+      - name: List installed packages
+        run: npm ls --depth=0
 
       - name: Print package.json contents
         run: cat package.json
-        continue-on-error: true
 
       - name: Print vite.config.js contents
-        run: cat vite.config.js
-        continue-on-error: true
-
-      - name: Install dependencies
-        run: |
-          npm ci
-          npm ls --depth=0
-        continue-on-error: true
+        run: cat vite.config.js || echo "vite.config.js not found"
 
       - name: Build
         run: npm run build
-        continue-on-error: true
 
       - name: List dist folder
         run: |
@@ -58,16 +48,18 @@ jobs:
             echo "dist folder does not exist"
             exit 1
           fi
-        continue-on-error: true
 
-      - name: Deploy
-        uses: peaceiris/actions-gh-pages@v3
-        if: github.ref == 'refs/heads/main'
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./dist
-          force_orphan: true
-        continue-on-error: true
+      - name: Deploy to GitHub Pages
+        run: |
+          git config --global user.name github-actions
+          git config --global user.email github-actions@github.com
+          git checkout --orphan gh-pages
+          git rm -rf .
+          mv dist/* .
+          rm -rf dist
+          git add .
+          git commit -m "Deploy to GitHub Pages"
+          git push -f origin gh-pages
 
       - name: Check deployment
         if: failure()
@@ -75,5 +67,13 @@ jobs:
           echo "Deployment failed"
           git status
           git log -n 5
-          echo "Contents of dist directory:"
-          ls -R dist || echo "dist directory not found"
+          echo "Contents of current directory:"
+          ls -R
+          echo "Node.js version:"
+          node --version
+          echo "npm version:"
+          npm --version
+          echo "package.json contents:"
+          cat package.json
+          echo "vite.config.js contents:"
+          cat vite.config.js || echo "vite.config.js not found"
