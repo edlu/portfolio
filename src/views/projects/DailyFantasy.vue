@@ -146,21 +146,6 @@ import dailyPlayer from '@/assets/img/daily/Daily-Player.png'
     overflow: hidden; /* Clearfix */
   }
 
-  .content-with-image-bleed {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
-    z-index: 2;
-    margin-top: -80px;
-    width: 200%;
-  }
-
-  .img-bleed {
-    margin-left: -80px;
-  }
-
   .content-wrapper {
     display: flex;
     align-items: flex-start;
