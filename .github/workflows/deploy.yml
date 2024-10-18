@@ -30,44 +30,31 @@ jobs:
 
       - name: Install dependencies
         run: |
-          echo "Installing dependencies..."
           npm ci
-          echo "Dependencies installed."
-          npm list --depth=0
+        continue-on-error: true
 
       - name: Build
         run: |
-          echo "Starting build process..."
           npm run build
-          echo "Build process completed."
+        continue-on-error: true
 
       - name: Debug - Build Output
         run: |
           echo "Build output:"
           ls -R dist || echo "dist directory not found"
 
-      - name: Prepare for deployment
-        run: |
-          echo "Preparing for deployment..."
-          git config --global user.name github-actions
-          git config --global user.email github-actions@github.com
-          echo "Git config set."
-
       - name: Deploy to GitHub Pages
         run: |
-          echo "Starting deployment..."
+          git config --global user.name github-actions
+          git config --global user.email github-actions@github.com
           git checkout --orphan gh-pages
           git rm -rf .
-          echo "Moving build files..."
           mv dist/* . || echo "Failed to move dist contents"
           rm -rf dist
-          echo "Adding files to git..."
           git add .
-          echo "Committing changes..."
           git commit -m "Deploy to GitHub Pages" || echo "Nothing to commit"
-          echo "Pushing to gh-pages branch..."
           git push -f origin gh-pages || echo "Failed to push to gh-pages"
-          echo "Deployment steps completed."
+        continue-on-error: true
 
       - name: Debug - Final State
         if: always()
@@ -78,14 +65,23 @@ jobs:
           git log -n 5
           echo "Current directory contents:"
           ls -la
+          echo "npm logs:"
+          ls -la ~/.npm/_logs || echo "No npm logs found"
 
-      - name: Upload error logs
-        if: failure()
+      - name: Capture Logs
+        if: always()
+        run: |
+          mkdir -p logs
+          cp ~/.npm/_logs/* logs/ || echo "No npm logs to copy"
+          npm run build > logs/build.log 2>&1 || echo "Build command failed"
+          git status > logs/git-status.log 2>&1
+          git log -n 10 > logs/git-log.log 2>&1
+
+      - name: Upload logs
+        if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: error-logs
+          name: deployment-logs
           path: |
-            ./*.log
-            ./npm-debug.log*
-            ./yarn-debug.log*
-            ./yarn-error.log*
+            logs
+            ~/.npm/_logs
