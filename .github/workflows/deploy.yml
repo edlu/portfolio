@@ -32,6 +32,20 @@ jobs:
         run: |
           npm ci
         continue-on-error: true
+      
+      - name: Debug - Project Structure
+        run: |
+          echo "Project structure:"
+          tree -L 3 || ls -R  # Use 'tree' if available, otherwise 'ls -R'
+          
+          echo "vite.config.js contents:"
+          cat vite.config.js || echo "vite.config.js not found"
+          
+          echo "main.js contents:"
+          cat src/main.js || echo "main.js not found"
+          
+          echo "router file contents:"
+          cat src/router/index.js || cat src/router.js || echo "router file not found"
 
       - name: Build
         run: |
