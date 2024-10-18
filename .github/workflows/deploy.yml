@@ -20,52 +20,64 @@ jobs:
         with:
           node-version: 20
 
+      - name: Debug - Environment Info
+        run: |
+          echo "Node version: $(node -v)"
+          echo "NPM version: $(npm -v)"
+          echo "Current directory: $(pwd)"
+          echo "Directory contents:"
+          ls -la
+
       - name: Install dependencies
-        run: npm ci
-        continue-on-error: true
+        run: |
+          echo "Installing dependencies..."
+          npm ci
+          echo "Dependencies installed."
+          npm list --depth=0
 
       - name: Build
-        run: npm run build
-        continue-on-error: true
+        run: |
+          echo "Starting build process..."
+          npm run build
+          echo "Build process completed."
+
+      - name: Debug - Build Output
+        run: |
+          echo "Build output:"
+          ls -R dist || echo "dist directory not found"
 
       - name: Prepare for deployment
         run: |
+          echo "Preparing for deployment..."
           git config --global user.name github-actions
           git config --global user.email github-actions@github.com
-        continue-on-error: true
+          echo "Git config set."
 
       - name: Deploy to GitHub Pages
         run: |
+          echo "Starting deployment..."
           git checkout --orphan gh-pages
           git rm -rf .
+          echo "Moving build files..."
           mv dist/* . || echo "Failed to move dist contents"
           rm -rf dist
+          echo "Adding files to git..."
           git add .
+          echo "Committing changes..."
           git commit -m "Deploy to GitHub Pages" || echo "Nothing to commit"
+          echo "Pushing to gh-pages branch..."
           git push -f origin gh-pages || echo "Failed to push to gh-pages"
-        continue-on-error: true
+          echo "Deployment steps completed."
 
-      - name: Capture error information
-        if: failure()
+      - name: Debug - Final State
+        if: always()
         run: |
-          echo "Deployment failed"
-          echo "Git status:"
+          echo "Final repository state:"
           git status
           echo "Recent git log:"
           git log -n 5
-          echo "Contents of current directory:"
-          ls -R
-          echo "Node.js version:"
-          node --version
-          echo "npm version:"
-          npm --version
-          echo "package.json contents:"
-          cat package.json || echo "package.json not found"
-          echo "vite.config.js contents:"
-          cat vite.config.js || echo "vite.config.js not found"
-          echo "dist directory contents:"
-          ls -R dist || echo "dist directory not found"
-        continue-on-error: true
+          echo "Current directory contents:"
+          ls -la
 
       - name: Upload error logs
         if: failure()
