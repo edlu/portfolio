@@ -9,5 +9,5 @@ export default defineConfig({
       '@': path.resolve(__dirname, './src')
     }
   },
-  base: '/' // This should be '/' unless you're using a custom domain
+  base: '/portfolio/' // This should be '/' unless you're using a custom domain
 })
