@@ -43,6 +43,15 @@ jobs:
           echo "Home.vue contents:"
           cat src/views/Home.vue || echo "Home.vue not found"
 
+      - name: Debug - Check gh-pages branch contents
+        if: success()
+        run: |
+          git checkout gh-pages
+          echo "Contents of gh-pages branch root:"
+          ls -la
+          echo "Contents of any potential subdirectories:"
+          find . -maxdepth 3 -type d
+
       - name: Build
         run: npm run build
 
