@@ -7,67 +7,35 @@ on:
     branches: [ main ]
 
 jobs:
-  deploy:
+  build-and-deploy:
     runs-on: ubuntu-latest
     permissions:
       contents: write
     steps:
-      - name: Checkout code
+      - name: Checkout
         uses: actions/checkout@v4
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version: '20'
 
       - name: Install dependencies
         run: npm ci
 
-      - name: Debug - Project Structure
-        run: |
-          echo "Project structure:"
-          tree -L 4 || ls -R
-
-      - name: Debug - vite.config.js contents
-        run: |
-          echo "vite.config.js contents:"
-          cat vite.config.js || echo "vite.config.js not found"
-
-      - name: Debug - Assets folder structure
-        run: |
-          echo "Assets folder structure:"
-          find src/assets -type f || echo "No files found in assets folder"
-
-      - name: Debug - Home.vue contents
-        run: |
-          echo "Home.vue contents:"
-          cat src/views/Home.vue || echo "Home.vue not found"
-
-      - name: Debug - Check docs folder contents
-        run: |
-          echo "Contents of docs folder:"
-          ls -R docs
-
       - name: Build
         run: npm run build
 
-      - name: Create 404.html
+      - name: Debug - Check dist folder contents
         run: |
-          cp docs/index.html docs/404.html
+          echo "Contents of dist folder:"
+          ls -R dist
 
-      - name: Commit and push changes
-        run: |
-          git config --global user.name github-actions
-          git config --global user.email github-actions@github.com
-          git add docs
-          git commit -m "Build for GitHub Pages" || echo "No changes to commit"
-          git push origin master
+      - name: Create .nojekyll file
+        run: touch dist/.nojekyll
 
-      - name: Upload logs
-        if: failure()
-        uses: actions/upload-artifact@v4
+      - name: Deploy to GitHub Pages
+        uses: JamesIves/github-pages-deploy-action@v4
         with:
-          name: deployment-logs
-          path: |
-            logs
-            ~/.npm/_logs
+          folder: dist # The folder the action should deploy.
+          branch: gh-pages # The branch the action should deploy to.
