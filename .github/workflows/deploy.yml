@@ -43,30 +43,25 @@ jobs:
           echo "Home.vue contents:"
           cat src/views/Home.vue || echo "Home.vue not found"
 
-      - name: Debug - Check gh-pages branch contents
-        if: success()
+      - name: Debug - Check docs folder contents
         run: |
-          git checkout gh-pages
-          echo "Contents of gh-pages branch root:"
-          ls -la
-          echo "Contents of any potential subdirectories:"
-          find . -maxdepth 3 -type d
+          echo "Contents of docs folder:"
+          ls -R docs
 
       - name: Build
         run: npm run build
 
-      - name: Deploy to GitHub Pages
+      - name: Create 404.html
+        run: |
+          cp docs/index.html docs/404.html
+
+      - name: Commit and push changes
         run: |
           git config --global user.name github-actions
           git config --global user.email github-actions@github.com
-          git checkout --orphan gh-pages
-          git rm -rf .
-          mv dist/* .
-          echo "portfolio.yourname.com" > CNAME  # Replace with your actual domain if you have one
-          rm -rf dist
-          git add .
-          git commit -m "Deploy to GitHub Pages"
-          git push -f origin gh-pages
+          git add docs
+          git commit -m "Build for GitHub Pages" || echo "No changes to commit"
+          git push origin master
 
       - name: Upload logs
         if: failure()
