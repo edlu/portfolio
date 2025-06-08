@@ -6,7 +6,7 @@ import heroFantasy from '@/assets/img/heroes/hero-fantasy.png';
 import heroFantasyWatch from '@/assets/img/heroes/hero-fantasy-watch.png';
 import heroDailyFantasy from '@/assets/img/heroes/hero-daily-fantasy.png';
 import heroNliven from '@/assets/img/heroes/hero-nliven.png';
-//import heroRipplematch from '@/assets/img/heroes/hero-ripplematch.png';
+import heroRipplematch from '@/assets/img/heroes/hero-ripplematch.png';
 
 // Daily Fantasy
 import dailyDeviceHero from '@/assets/img/daily/daily-device-hero.png'
@@ -179,12 +179,23 @@ onMounted(() => {
 
 <template>
     <main class="home">
+      <a href="#" @click.prevent="handleClick($event, 'project/ripplematch')" :class="{ 'disabled': isTransitioning }">
+            <project
+            title="RippleMatch Recruiting"
+            company="RippleMatch"
+            year="2023-2024"
+            role="Principal Product Designer - Lead UX, UI, Design Manager"
+            platform="Responsive Web"
+            :imgUrl="heroRipplematch"
+            imgAltText="RippleMatch Recruiting"
+            />
+        </a>
         <a href="#" @click.prevent="handleClick($event, 'project/tixtrack')" :class="{ 'disabled': isTransitioning }">
             <project
             title="TixTrack Ticketing"
             company="TixTrack"
             year="2015-2022"
-            role="Lead UX, UI, Design Manager"
+            role="Director of Design - Lead UX, UI, Design Manager"
             platform="Responsive Web"
             :imgUrl="heroNliven"
             imgAltText="Nliven Ticketing"
@@ -195,7 +206,7 @@ onMounted(() => {
             title="Yahoo! Daily Fantasy Mobile"
             company="Yahoo!"
             year="2014-2015"
-            role="Lead UX, UI, Design Manager"
+            role="Senior Designer - Lead UX, UI, Design Manager"
             platform="iOS, Android"
             :imgUrl="heroDailyFantasy"
             imgAltText="Yahoo! Daily Fantasy Mobile"
@@ -207,7 +218,7 @@ onMounted(() => {
             title="Yahoo! Fantasy Sports Apple Watch"
             company="Yahoo!"
             year="2014"
-            role="Lead UX, UI"
+            role="Senior Designer - Lead UX, UI"
             platform="watchOS"
             :imgUrl="heroFantasyWatch"
             imgAltText="Yahoo! Fantasy Sports Apple Watch"
@@ -215,27 +226,15 @@ onMounted(() => {
         </a>
         <a href="#" @click.prevent="handleClick($event, 'project/yahoo-fantasy-mobile')" :class="{ 'disabled': isTransitioning }">
             <project
-            title="Yahoo! Fantasy Sports MobileApp"
+            title="Yahoo! Fantasy Sports Mobile App"
             company="Yahoo!"
             year="2011-2015"
-            role="Lead UX, UI, Design Manager"
+            role="Senior Designer - Lead UX, UI, Design Manager"
             platform="iOS, Android"
             :imgUrl="heroFantasy"
             imgAltText="Yahoo! Fantasy SportsMobile App"
             />
         </a>
-        
-        <!-- <a href="#" @click.prevent="handleClick($event, 'project/ripplematch')" :class="{ 'disabled': isTransitioning }">
-            <project
-            title="RippleMatch Recruiting"
-            company="RippleMatch"
-            year="2023"
-            role="Lead UXR, UX & UI"
-            platform="Responsive Web"
-            :imgUrl="heroRipplematch"
-            imgAltText="RippleMatch Recruiting"
-            />
-        </a> -->
     </main>
 </template>
 
