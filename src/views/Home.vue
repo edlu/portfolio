@@ -215,7 +215,7 @@ onMounted(() => {
         </a>
         <a href="#" @click.prevent="handleClick($event, 'project/yahoo-fantasy-mobile')" :class="{ 'disabled': isTransitioning }">
             <project
-            title="Yahoo! Fantasy Sports MobileApp"
+            title="Yahoo! Fantasy Sports Mobile App"
             company="Yahoo!"
             year="2010-2015"
             role="Lead UX, UI, Design Manager"
