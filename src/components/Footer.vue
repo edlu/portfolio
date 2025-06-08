@@ -1,5 +1,5 @@
 <script setup>
-import superindustrialMark from '/src/assets/img/superindustrial-mark.svg'
+import superindustrialMark from '/src/assets/img/superindustrial-logo.svg'
 </script>
 
 <template>
