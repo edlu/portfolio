@@ -1,1 +1,0 @@
-import{_ as t,c,b as s,o as a}from"./index-C-jKXbJJ.js";const o={},n={class:"tixtrack"};function r(l,e){return a(),c("main",n,e[0]||(e[0]=[s("h1",null,"RippleMatch",-1)]))}const i=t(o,[["render",r]]);export{i as default};
