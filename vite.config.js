@@ -9,9 +9,11 @@ export default defineConfig({
       '@': path.resolve(__dirname, './src')
     }
   },
-  base: './',  // Changed to relative path for assets
+  base: '/portfolio/',  // Changed back to '/portfolio/' for image paths
   build: {
+    outDir: 'dist',
     assetsDir: 'assets',
+    emptyOutDir: true,
     rollupOptions: {
       output: {
         assetFileNames: 'assets/[name]-[hash][extname]',
