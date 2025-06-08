@@ -224,7 +224,6 @@ onMounted(() => {
             imgAltText="Yahoo! Fantasy SportsMobile App"
             />
         </a>
-        
         <!-- <a href="#" @click.prevent="handleClick($event, 'project/ripplematch')" :class="{ 'disabled': isTransitioning }">
             <project
             title="RippleMatch Recruiting"
