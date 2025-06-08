@@ -217,7 +217,7 @@ onMounted(() => {
             <project
             title="Yahoo! Fantasy Sports MobileApp"
             company="Yahoo!"
-            year="2011-2015"
+            year="2010-2015"
             role="Lead UX, UI, Design Manager"
             platform="iOS, Android"
             :imgUrl="heroFantasy"

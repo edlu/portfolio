@@ -15,7 +15,7 @@ import dailyPlayer from '@/assets/img/daily/Daily-Player.png'
         <section>
             <h1>Yahoo! Daily Fantasy</h1>
 
-            <p class="size-l">In 2015, we made a strategic bet to get ahead of the market shift from season-long Fantasy Sports to Daily Fantasy. Our goal was to create a monetized daily lineup challenge that would drive heavy engagement while capitalizing on our existing user base. We would focus on social features from the start with the hope that the product would experience explosive growth.</p>
+            <p class="size-l">We made a strategic bet to get ahead of the market shift from season-long Fantasy Sports to Daily Fantasy. Our goal was to create a monetized daily lineup challenge that would drive heavy engagement while capitalizing on our existing user base. We would focus on social features from the start with the hope that the product would experience explosive growth.</p>
 
             <div class="project-summary card">
                 <div class="project-summary__data padding-2x padding-1x-mobile">
@@ -27,7 +27,7 @@ import dailyPlayer from '@/assets/img/daily/Daily-Player.png'
                             </tr>
                             <tr>
                                 <td class="label">Year</td>
-                                <td class="value">2015</td>
+                                <td class="value">2014-2015</td>
                             </tr>
                             <tr>
                                 <td class="label">Role</td>
