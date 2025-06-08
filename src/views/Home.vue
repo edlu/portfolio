@@ -194,7 +194,7 @@ onMounted(() => {
             <project
             title="Yahoo! Daily Fantasy Mobile"
             company="Yahoo!"
-            year="2015"
+            year="2014-2015"
             role="Lead UX, UI, Design Manager"
             platform="iOS, Android"
             :imgUrl="heroDailyFantasy"
@@ -206,7 +206,7 @@ onMounted(() => {
             <project
             title="Yahoo! Fantasy Sports Apple Watch"
             company="Yahoo!"
-            year="2015"
+            year="2014"
             role="Lead UX, UI"
             platform="watchOS"
             :imgUrl="heroFantasyWatch"
