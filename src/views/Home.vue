@@ -183,7 +183,7 @@ onMounted(() => {
             <project
             title="TixTrack Ticketing"
             company="TixTrack"
-            year="2015"
+            year="2015-2022"
             role="Lead UX, UI, Design Manager"
             platform="Responsive Web"
             :imgUrl="heroNliven"
@@ -204,24 +204,24 @@ onMounted(() => {
         
         <a href="#" @click.prevent="handleClick($event, 'project/yahoo-fantasy-apple-watch')" :class="{ 'disabled': isTransitioning }">
             <project
-            title="Yahoo! Fantasy Apple Watch"
+            title="Yahoo! Fantasy Sports Apple Watch"
             company="Yahoo!"
             year="2015"
             role="Lead UX, UI"
             platform="watchOS"
             :imgUrl="heroFantasyWatch"
-            imgAltText="Yahoo! Fantasy Apple Watch"
+            imgAltText="Yahoo! Fantasy Sports Apple Watch"
             />
         </a>
         <a href="#" @click.prevent="handleClick($event, 'project/yahoo-fantasy-mobile')" :class="{ 'disabled': isTransitioning }">
             <project
-            title="Yahoo! Fantasy App"
+            title="Yahoo! Fantasy Sports MobileApp"
             company="Yahoo!"
             year="2011-2015"
             role="Lead UX, UI, Design Manager"
-            platform="ios, Android"
+            platform="iOS, Android"
             :imgUrl="heroFantasy"
-            imgAltText="Yahoo! Fantasy Mobile App"
+            imgAltText="Yahoo! Fantasy SportsMobile App"
             />
         </a>
         
