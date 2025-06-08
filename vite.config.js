@@ -9,7 +9,7 @@ export default defineConfig({
       '@': path.resolve(__dirname, './src')
     }
   },
-  base: '/portfolio/',  // Changed back to '/portfolio/' for image paths
+  base: './',  // Changed to relative path
   build: {
     outDir: 'dist',
     assetsDir: 'assets',
