@@ -1,11 +1,11 @@
 <script setup>
-import superindustrialMark from '/src/assets/img/superindustrial-logo.svg'
+import superindustrialMark from '/src/assets/img/superindustrial-mark.svg'
 </script>
 
 <template>
   <div class="footer padding-x-2x-tablet-portrait size-xs">
     <img :src="superindustrialMark" alt="Superindustrial Mark" height="32" loading="lazy"/>
-    <span>&copy;2024 Superindustrial</span>
+    <span>&copy;2025 Superindustrial</span>
   </div>
 </template>
 
