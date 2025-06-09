@@ -66,8 +66,6 @@ import fsgaAward from '@/assets/img/fantasy/fsga-award.png'
                         <li>Awarded FSGA Best Mobile Commissioner Product Mobile Implementation 2013, 2014, 2015</li>
                     </ul>
                 </div>
-
-
             </div>
         </section>
         <section class="margin-bottom-2x">
