@@ -1,0 +1,1 @@
+import{f as e,g as o,o as r}from"./vue-DIKPhxqY.js";import{_ as s}from"./index-B-gCSMUQ.js";import"./vue-router-CMcCiWUo.js";const a={},c={class:"tixtrack"};function n(i,t){return r(),e("main",c,t[0]||(t[0]=[o("h1",null,"RippleMatch",-1)]))}const f=s(a,[["render",n]]);export{f as default};
