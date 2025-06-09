@@ -38,7 +38,7 @@ defineProps({
     </table>
   </div>
   <div class="project__scrim"></div>
-  <div class="project__image" :style="{ backgroundImage: `url('${imgUrl}')` }"></div>
+  <div class="project__image" :style="{ backgroundImage: `url(${imgUrl})` }"></div>
 </section>
 
 </template>
